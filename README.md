@@ -4,8 +4,6 @@
 
 <sub><em>the lab, one of the later nights.</em></sub>
 
-<br/>
-
 # Fahim Faisal
 
 **Autonomy engineer.** Machines that perceive, reason, and act — built to still be right after everyone who could check on them has gone home.
