@@ -3,6 +3,7 @@
 <img src="assets/lab-hero.png" width="400" alt="late night at the workstation" />
 
 <br/>
+<br/>
 
 <sub><em>the robotics lab, one of the later nights.</em></sub>
 
