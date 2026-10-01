@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/lab-hero.png" width="420" alt="late night at the workstation" />
+<img src="assets/lab-hero.png" width="300" alt="late night at the workstation" />
 
 <sub><em>the lab, one of the later nights.</em></sub>
 
@@ -8,13 +8,23 @@
 
 # Fahim Faisal
 
-**Autonomy engineer.** Machines that perceive, reason, and act — underwater, in the air, on the ground — and that have to work correctly when nobody is watching.
+**Autonomy engineer.** Machines that perceive, reason, and act — and that have to work correctly when nobody is watching.
 
 Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io) · *Proof of work, not adjectives.*
 
 </div>
 
 <br/>
+
+I started where machines are hardest to hide: something that has to leave the ground. Rockets taught me guidance and control; rovers taught me manipulation and vision; underwater vehicles taught me to trust nothing I hadn't measured. The thread through all of it is the same question — how does a machine understand the world well enough to act in it?
+
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/rule-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/rule-light.svg">
+  <img src="assets/rule-light.svg" width="100%" alt="">
+</picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/rail-dark.svg">
@@ -24,37 +34,28 @@ Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io) · *Proof of work,
 
 <sub>counted, not estimated — <a href="https://fh1m.github.io">method on the site</a></sub>
 
-<br/><br/>
-
-**underwater** — state estimation, real-time vision, embedded control loops<br/>
-**ground** — inverse kinematics, edge vision, GPS-denied navigation<br/>
-**air** — guidance, navigation and control, flight software
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/rule-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/rule-light.svg">
   <img src="assets/rule-light.svg" width="100%" alt="">
 </picture>
 
-### how i think
+### what i believe
 
-> **Measurement over assumption.** Every shipped constant carries its method and the conditions it was measured under.
+I like machines that have to deal with reality.<br/>
+I like taking expensive or opaque systems apart and rebuilding them from first principles.<br/>
+I like hardware, because physics gets the final vote.<br/>
+I like open source, because knowledge should compound.
 
-> **Refusal over invention.** Systems return `ALIGNED`, `LOST`, `TIMEOUT` — never a guess dressed up as a target.
+*And I am still building.*
 
-> **Separation of concerns.** Reflexes stay close to the hardware; thinking stays upstream. Nothing crosses that boundary except a command.
-
-> **Reality precedence.** Simulation models the real failure modes, never the ideal ones.
-
-The first principle is that you must not fool yourself — and you are the easiest person to fool.
+> 958 / 958 — ESC frames read exactly 0 with nothing attached. A message count can never prove a thruster is alive.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/rule-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/rule-light.svg">
   <img src="assets/rule-light.svg" width="100%" alt="">
 </picture>
-
-### stack
 
 Python · C · ROS 2 · MAVLink · Hailo-8 · ESP32 / RISC-V · EKF · VSLAM · PyQt6
 
