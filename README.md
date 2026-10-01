@@ -8,22 +8,20 @@ Perception, estimation, and control for machines that operate outside the screen
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><td align="center">
-<img width="150" src="assets/duburi-workstation.png" alt="fh1m working at the BRAC University Duburi workstation">
-<br>
-<sub><i>One of my favourite—and now last—views from the Duburi lab desk. I will not return to this desk; that is life. The work remains in the systems built there.</i></sub>
+<img width="230" src="assets/duburi-workstation.png" alt="fh1m working at the BRAC University Duburi workstation">
 </td></tr>
 </table>
 
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=googlechrome&logoColor=000000)](https://fh1m.github.io/)
-[![Work index](https://img.shields.io/badge/WORK_INDEX-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=bookstack&logoColor=000000)](https://fh1m.github.io/work)
-[![Mongla](https://img.shields.io/badge/MONGLA-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=ros&logoColor=000000)](https://github.com/fh1m/mongla_ws)
-[![Repositories](https://img.shields.io/badge/24_REPOSITORIES-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=github&logoColor=000000)](https://github.com/fh1m?tab=repositories)
-[![Engineering log](https://img.shields.io/badge/ENGINEERING_LOG-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=readthedocs&logoColor=000000)](https://fh1m.github.io/log)
-[![Current focus](https://img.shields.io/badge/CURRENT_FOCUS-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=target&logoColor=000000)](https://fh1m.github.io/now)
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-ffffff?style=for-the-badge&labelColor=90caf9&color=90caf9&logo=googlechrome&logoColor=000000)](https://fh1m.github.io/)
+[![Work index](https://img.shields.io/badge/WORK_INDEX-ffffff?style=for-the-badge&labelColor=ff8a80&color=ff8a80&logo=bookstack&logoColor=000000)](https://fh1m.github.io/work)
+[![Mongla](https://img.shields.io/badge/MONGLA-ffffff?style=for-the-badge&labelColor=64b5f6&color=64b5f6&logo=ros&logoColor=000000)](https://github.com/fh1m/mongla_ws)
+[![Repositories](https://img.shields.io/badge/24_REPOSITORIES-ffffff?style=for-the-badge&labelColor=cfd8dc&color=cfd8dc&logo=github&logoColor=000000)](https://github.com/fh1m?tab=repositories)
 
-<sub>Portfolio = context · Work index = breadth · Mongla = deepest current system · Repositories = source · Log = chronology · Now = active direction</sub>
-
-<sub><b>SENSE</b> camera · IMU · depth &nbsp;→&nbsp; <b>ESTIMATE</b> EKF · optical flow &nbsp;→&nbsp; <b>CONTROL</b> firmware · GNC &nbsp;→&nbsp; <b>ACT</b> ESC · gimbal · vehicle</sub>
+<sub><b>Operating loop</b></sub><br>
+[![SENSE](https://img.shields.io/badge/SENSE-ffffff?style=flat-square&labelColor=90caf9&color=90caf9&logoColor=000000)](#the-record)
+[![ESTIMATE](https://img.shields.io/badge/ESTIMATE-ffffff?style=flat-square&labelColor=81d4fa&color=81d4fa&logoColor=000000)](#the-record)
+[![CONTROL](https://img.shields.io/badge/CONTROL-ffffff?style=flat-square&labelColor=ff8a80&color=ff8a80&logoColor=000000)](#the-record)
+[![ACT](https://img.shields.io/badge/ACT-ffffff?style=flat-square&labelColor=ef9a9a&color=ef9a9a&logoColor=000000)](#the-record)
 
 </div>
 
@@ -35,15 +33,14 @@ Perception, estimation, and control for machines that operate outside the screen
 
 | **PUBLIC WORK** | **ACTIVE PERIOD** | **CONTROL** | **VISION** | **TESTED STACK** |
 |:---:|:---:|:---:|:---:|:---:|
-| `24 repos` | `2023 → now` | `500 Hz` | `53.9 Hz` | `4,208 tests` |
+| `24 repos` | `2023 - now` | `500 Hz` | `53.9 Hz` | `4,208 tests` |
 
 </div>
 
 <div align="center">
 
-[![SYSTEM MAP](https://img.shields.io/badge/SYSTEM_MAP-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=mermaid&logoColor=000000)](#the-record)
-[![MEASURED SIGNALS](https://img.shields.io/badge/MEASURED_SIGNALS-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=googleanalytics&logoColor=000000)](#measured-work)
-[![SOURCE](https://img.shields.io/badge/SOURCE-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=github&logoColor=000000)](https://github.com/fh1m/mongla_ws)
+[![SYSTEM MAP](https://img.shields.io/badge/SYSTEM_MAP-ffffff?style=for-the-badge&labelColor=90caf9&color=90caf9&logo=mermaid&logoColor=000000)](#the-record)
+[![SOURCE](https://img.shields.io/badge/SOURCE-ffffff?style=for-the-badge&labelColor=ff8a80&color=ff8a80&logo=github&logoColor=000000)](https://github.com/fh1m/mongla_ws)
 
 </div>
 
@@ -91,24 +88,13 @@ The recurring problem is not “which framework?” It is whether the measuremen
 | **4,208 tests** | the stack is larger than its demo |
 | **320 × 240 / 25.4 FPS** | Dristy gives a small camera a bounded job |
 
-<div align="center">
-
-[![TRACE THE STACK](https://img.shields.io/badge/TRACE_THE_STACK-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=github&logoColor=000000)](https://github.com/fh1m/mongla_ws)
-[![READ THE TESTS](https://img.shields.io/badge/READ_THE_TESTS-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=github&logoColor=000000)](https://github.com/fh1m/mongla_ws#testing)
-[![SEE THE EDGE PATH](https://img.shields.io/badge/SEE_THE_EDGE_PATH-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=github&logoColor=000000)](https://github.com/fh1m/Dristy)
-
-</div>
-
 > An ESC can report a perfectly respectable zero with nothing attached. A message count is not proof that a thruster is alive.
 
 ## Research, leadership, and field work
 
 <sub>The surrounding work: research, competition systems, and engineering ownership.</sub>
 
-[![RESEARCH](https://img.shields.io/badge/RESEARCH-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=readthedocs&logoColor=000000)](https://fh1m.github.io/about)
-[![FIELD LOG](https://img.shields.io/badge/FIELD_LOG-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=target&logoColor=000000)](https://fh1m.github.io/log)
-[![COMPETITION WORK](https://img.shields.io/badge/COMPETITION_WORK-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=trophy&logoColor=000000)](https://fh1m.github.io/work)
-[![CURRENT DIRECTION](https://img.shields.io/badge/CURRENT_DIRECTION-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=compass&logoColor=000000)](https://fh1m.github.io/now)
+[Underwater domain generalization](https://fh1m.github.io/about) · [field log](https://fh1m.github.io/log) · [competition work](https://fh1m.github.io/work) · [current direction](https://fh1m.github.io/now)
 
 Rockets and UAVs: TVC control, flight computers, trajectory prediction, VSLAM, and GPS-denied navigation.<br>
 Rovers: inverse kinematics, edge alignment, OCR, and competition data pipelines.<br>
@@ -126,19 +112,8 @@ Leadership: engineering ownership across vision, autonomy integration, reliabili
 
 <div align="center">
 
-[![ROS 2 + AUTONOMY](https://img.shields.io/badge/ROS_2_%2B_AUTONOMY-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=ros&logoColor=000000)](https://github.com/fh1m/mongla_ws)
-[![EDGE VISION](https://img.shields.io/badge/EDGE_VISION-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=opencv&logoColor=000000)](https://github.com/fh1m/Dristy)
-[![FLIGHT + SIMULATION](https://img.shields.io/badge/FLIGHT_%2B_SIMULATION-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=github&logoColor=000000)](https://github.com/fh1m/duburi-sim_ws)
-
-</div>
-
-<div align="center">
-
-[![Full record](https://img.shields.io/badge/READ_THE_FULL_RECORD-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=readthedocs&logoColor=000000)](https://fh1m.github.io/)
-[![About](https://img.shields.io/badge/ABOUT-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=personio&logoColor=000000)](https://fh1m.github.io/about)
-[![Source repositories](https://img.shields.io/badge/SOURCE_REPOSITORIES-ffffff?style=for-the-badge&labelColor=ffffff&color=ffffff&logo=github&logoColor=000000)](https://github.com/fh1m?tab=repositories)
-
-<sub>Start with the work index for breadth, Mongla for depth, and the repositories when the claim needs inspection.</sub>
+[![Full record](https://img.shields.io/badge/READ_THE_FULL_RECORD-ffffff?style=for-the-badge&labelColor=90caf9&color=90caf9&logo=readthedocs&logoColor=000000)](https://fh1m.github.io/)
+[![About](https://img.shields.io/badge/ABOUT-ffffff?style=for-the-badge&labelColor=ff8a80&color=ff8a80&logo=personio&logoColor=000000)](https://fh1m.github.io/about)
 
 <sub>Dhaka, Bangladesh</sub>
 
