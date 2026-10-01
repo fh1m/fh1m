@@ -12,7 +12,7 @@ Perception, estimation, and control for machines that operate outside the screen
 </td></tr>
 </table>
 
-<p align="center">
+<div align="center">
 [![Portfolio](https://img.shields.io/badge/PORTFOLIO-ffffff?style=for-the-badge&labelColor=90caf9&color=90caf9&logo=googlechrome&logoColor=000000)](https://fh1m.github.io/)
 &nbsp;&nbsp;
 [![Work index](https://img.shields.io/badge/WORK_INDEX-ffffff?style=for-the-badge&labelColor=ff8a80&color=ff8a80&logo=bookstack&logoColor=000000)](https://fh1m.github.io/work)
@@ -20,11 +20,11 @@ Perception, estimation, and control for machines that operate outside the screen
 [![Mongla](https://img.shields.io/badge/MONGLA-ffffff?style=for-the-badge&labelColor=64b5f6&color=64b5f6&logo=ros&logoColor=000000)](https://github.com/fh1m/mongla_ws)
 &nbsp;&nbsp;
 [![Repositories](https://img.shields.io/badge/24_REPOSITORIES-ffffff?style=for-the-badge&labelColor=cfd8dc&color=cfd8dc&logo=github&logoColor=000000)](https://github.com/fh1m?tab=repositories)
-</p>
+</div>
 
 </div>
 
-## The record
+## The loop
 
 ```mermaid
 flowchart LR
@@ -72,11 +72,23 @@ The recurring problem is not “which framework?” It is whether the measuremen
 
 > An ESC can report a perfectly respectable zero with nothing attached. A message count is not proof that a thruster is alive.
 
+<div align="center">
+
+<img src="assets/engineering-signals.svg" alt="Measured engineering signals: 500 hertz board control, 53.9 hertz edge perception, and 18.0 milliseconds photon-to-detection latency">
+
+</div>
+
 ## Research, leadership, and field work
 
 <sub>The surrounding work: research, competition systems, and engineering ownership.</sub>
 
-[Underwater domain generalization](https://fh1m.github.io/about) · [field log](https://fh1m.github.io/log) · [competition work](https://fh1m.github.io/work) · [current direction](https://fh1m.github.io/now)
+<div align="center">
+
+[![RESEARCH](https://img.shields.io/badge/RESEARCH-ffffff?style=for-the-badge&labelColor=90caf9&color=90caf9&logo=readthedocs&logoColor=000000)](https://fh1m.github.io/about)
+[![FIELD LOG](https://img.shields.io/badge/FIELD_LOG-ffffff?style=for-the-badge&labelColor=ff8a80&color=ff8a80&logo=target&logoColor=000000)](https://fh1m.github.io/log)
+[![WORK](https://img.shields.io/badge/WORK-ffffff?style=for-the-badge&labelColor=64b5f6&color=64b5f6&logo=bookstack&logoColor=000000)](https://fh1m.github.io/work)
+
+</div>
 
 Rockets and UAVs: TVC control, flight computers, trajectory prediction, VSLAM, and GPS-denied navigation.<br>
 Rovers: inverse kinematics, edge alignment, OCR, and competition data pipelines.<br>
@@ -94,8 +106,13 @@ Leadership: engineering ownership across vision, autonomy integration, reliabili
 
 <div align="center">
 
+[![ROS 2](https://img.shields.io/badge/ROS_2-ffffff?style=for-the-badge&labelColor=90caf9&color=90caf9&logo=ros&logoColor=000000)](https://www.ros.org/)
+[![MAVLINK 2](https://img.shields.io/badge/MAVLINK_2-ffffff?style=for-the-badge&labelColor=81d4fa&color=81d4fa&logoColor=000000)](https://mavlink.io/)
+[![OPENCV](https://img.shields.io/badge/OPENCV-ffffff?style=for-the-badge&labelColor=ff8a80&color=ff8a80&logo=opencv&logoColor=000000)](https://opencv.org/)
+[![GAZEBO](https://img.shields.io/badge/GAZEBO-ffffff?style=for-the-badge&labelColor=ef9a9a&color=ef9a9a&logoColor=000000)](https://gazebosim.org/)
+
+</div>
+
 [Full record](https://fh1m.github.io/) · [About](https://fh1m.github.io/about) · [Repositories](https://github.com/fh1m?tab=repositories)
 
 <sub>Dhaka, Bangladesh</sub>
-
-</div>
