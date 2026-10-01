@@ -1,4 +1,4 @@
-<table align="center" width="100%" cellpadding="18" cellspacing="0">
+<table align="center" width="100%" cellpadding="8" cellspacing="0">
 <tr>
 <td valign="top" align="center" width="68%">
 
@@ -17,7 +17,7 @@ Perception, estimation, and control for machines that operate outside the screen
 
 <sub>Portfolio = context · Work index = breadth · Mongla = deepest current system · Repositories = source · Log = chronology · Now = active direction</sub>
 
-<table align="center" cellpadding="8" cellspacing="0">
+<table align="center" cellpadding="4" cellspacing="0">
 <tr>
 <td align="center"><b>SENSE</b><br><sub>camera · IMU · depth</sub></td>
 <td align="center">→</td>
@@ -29,14 +29,12 @@ Perception, estimation, and control for machines that operate outside the screen
 </tr>
 </table>
 
-<sub><b>Truth states:</b> bench → built → blocked → water. Capability is earned at the hardware boundary.</sub>
-
 </td>
 <td valign="top" align="center" width="32%">
 
-<table border="1" cellpadding="10" cellspacing="0">
+<table border="1" cellpadding="6" cellspacing="0">
 <tr><td align="center">
-<img width="250" src="assets/duburi-workstation.png" alt="fh1m working at the BRAC University Duburi workstation">
+<img width="220" src="assets/duburi-workstation.png" alt="fh1m working at the BRAC University Duburi workstation">
 <br>
 <sub><i>One of my favourite—and now last—views from the Duburi lab desk. I will not return to this desk; that is life. The work remains in the systems built there.</i></sub>
 </td></tr>
