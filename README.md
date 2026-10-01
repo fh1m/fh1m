@@ -4,7 +4,7 @@
 
 <sub><em>the lab, one of the later nights.</em></sub>
 
-<br/><br/>
+<br/>
 
 # Fahim Faisal
 
@@ -28,7 +28,7 @@ Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io)
 
 <br/>
 
-My training runs backwards from most engineers I know. I didn't start on the ground and work my way out — I started with the thing that has to leave the ground, where a mistake is instantly visible and instantly expensive. Then I came down to things that walk. Then I went under things that swim, which turned out to be the hardest teacher of the three, because water doesn't argue with you and it doesn't wait for a patch. It just stops returning what you expected and leaves you to work out, alone, whether the sensor lied or the world changed.
+My training runs backwards from most engineers I know. I didn't start on the ground and work my way out  I started with the thing that has to leave the ground, where a mistake is instantly visible and instantly expensive. Then I came down to things that walk. Then I went under things that swim, which turned out to be the hardest teacher of the three, because water doesn't argue with you and it doesn't wait for a patch. It just stops returning what you expected and leaves you to work out, alone, whether the sensor lied or the world changed.
 
 That's the actual job, underneath the ROS nodes and the control loops: deciding what a machine is allowed to believe about a world it can't fully see, and building the discipline into the code so the machine never believes more than it has earned.
 
