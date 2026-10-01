@@ -8,9 +8,9 @@
 
 # Fahim Faisal
 
-**Autonomy engineer.** Machines that perceive, reason, and act — and that have to work correctly when nobody is watching.
+**Autonomy engineer.** Machines that perceive, reason, and act — built to still be right after everyone who could check on them has gone home.
 
-Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io) · *Proof of work, not adjectives.*
+Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io)
 
 </div>
 
@@ -28,7 +28,9 @@ Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io) · *Proof of work,
 
 <br/>
 
-I started where machines are hardest to hide: something that has to leave the ground. Rockets taught me guidance and control; rovers taught me manipulation and vision; underwater vehicles taught me to trust nothing I hadn't measured. The thread through all of it is the same question — how does a machine understand the world well enough to act in it?
+My training runs backwards from most engineers I know. I didn't start on the ground and work my way out — I started with the thing that has to leave the ground, where a mistake is instantly visible and instantly expensive. Then I came down to things that walk. Then I went under things that swim, which turned out to be the hardest teacher of the three, because water doesn't argue with you and it doesn't wait for a patch. It just stops returning what you expected and leaves you to work out, alone, whether the sensor lied or the world changed.
+
+That's the actual job, underneath the ROS nodes and the control loops: deciding what a machine is allowed to believe about a world it can't fully see, and building the discipline into the code so the machine never believes more than it has earned.
 
 <br/>
 
@@ -41,27 +43,8 @@ I started where machines are hardest to hide: something that has to leave the gr
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/rail-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/rail-light.svg">
-  <img src="assets/rail-light.svg" alt="24 repos, 11 shipped, 3 domains, 4 placements, 2 papers — counted, not estimated">
+  <img src="assets/rail-light.svg" alt="24 repos, 11 shipped, 3 domains, 4 placements, 2 papers">
 </picture>
-
-<sub>counted, not estimated — <a href="https://fh1m.github.io">method on the site</a></sub>
-
-<br/><br/>
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=fh1m&show_icons=true&hide_title=true&hide_border=true&bg_color=0D1117&title_color=E6EDF3&icon_color=2EA043&text_color=8B949E&ring_color=2EA043">
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=fh1m&show_icons=true&hide_title=true&hide_border=true&bg_color=FFFFFF&title_color=1F2328&icon_color=1A7F37&text_color=57606A&ring_color=1A7F37">
-  <img src="https://github-readme-stats.vercel.app/api?username=fh1m&show_icons=true&hide_title=true&hide_border=true&bg_color=FFFFFF&title_color=1F2328&icon_color=1A7F37&text_color=57606A&ring_color=1A7F37" height="165" alt="github stats">
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=fh1m&hide_border=true&background=0D1117&ring=2EA043&fire=DA3633&currStreakLabel=E6EDF3&sideLabels=8B949E&currStreakNum=E6EDF3&sideNums=E6EDF3&dates=6E7681">
-  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=fh1m&hide_border=true&background=FFFFFF&ring=1A7F37&fire=CF222E&currStreakLabel=1F2328&sideLabels=57606A&currStreakNum=1F2328&sideNums=1F2328&dates=8C959F">
-  <img src="https://streak-stats.demolab.com/?user=fh1m&hide_border=true&background=FFFFFF&ring=1A7F37&fire=CF222E&currStreakLabel=1F2328&sideLabels=57606A&currStreakNum=1F2328&sideNums=1F2328&dates=8C959F" height="165" alt="commit streak">
-</picture>
-
-</div>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/rule-dark.svg">
@@ -69,26 +52,21 @@ I started where machines are hardest to hide: something that has to leave the gr
   <img src="assets/rule-light.svg" width="100%" alt="">
 </picture>
 
-### what i believe
+### a few things I hold as load-bearing
 
-I like machines that have to deal with reality.<br/>
-I like taking expensive or opaque systems apart and rebuilding them from first principles.<br/>
-I like hardware, because physics gets the final vote.<br/>
-I like open source, because knowledge should compound.
+A system I didn't build, I don't extend blind — I take it apart until I can explain every piece back in my own words, and only then do I trust it with something that matters.
 
-*And I am still building.*
+A claim without a method attached isn't a fact yet. It's a rumor wearing a lab coat, and I treat it that way until it earns better.
 
-> 958 / 958 — ESC frames read exactly 0 with nothing attached. A message count can never prove a thruster is alive.
+Working once, under ideal conditions, in a demo, isn't engineering. It's a coin flip with good lighting. The version that counts is the one that still works on the night nobody's filming.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/rule-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/rule-light.svg">
-  <img src="assets/rule-light.svg" width="100%" alt="">
-</picture>
+Hardware doesn't negotiate. You can argue with a product manager; you cannot argue with a thruster that draws more current than the ESC can source. I like that. It's the most honest collaborator I've worked with.
 
-**Latest from the notebook:** *[The 71 transposes that were one operation](https://fh1m.github.io/writing)* — how a feature matcher that refused to compile for a neural accelerator turned out to be one idea wearing 71 masks.
+<br/>
 
-**On the desk:** *The Creative Act* (Rick Rubin) · tinygrad internals (geohot) · papers on right-invariant EKFs
+> A heartbeat message tells you the wire is fine. It has never once told you the propeller is still attached to the shaft.
+
+<br/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/rule-dark.svg">
@@ -96,28 +74,18 @@ I like open source, because knowledge should compound.
   <img src="assets/rule-light.svg" width="100%" alt="">
 </picture>
 
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=python,c,cpp,linux,git,vim,arduino,raspberrypi&theme=dark">
-  <source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=python,c,cpp,linux,git,vim,arduino,raspberrypi&theme=light">
-  <img src="https://skillicons.dev/icons?i=python,c,cpp,linux,git,vim,arduino,raspberrypi&theme=light" alt="Python, C, C++, Linux, Git, Vim, Arduino, Raspberry Pi">
-</picture>
-
-<sub>ROS 2 · MAVLink · Hailo-8 · ESP32 / RISC-V · EKF · VSLAM · PyQt6</sub>
-
-</div>
+Python · C · ROS 2 · MAVLink · Hailo-8 · ESP32 / RISC-V · EKF · VSLAM · PyQt6
 
 <br/>
 
 <div align="center">
 
-*let's build something that has to work.*
+*Ship the version that's honest. Make it fast after.*
 
 </div>
 
 <br/>
 
 <sub>
-Every number on this page has a method behind it, same as on <a href="https://fh1m.github.io">fh1m.github.io</a> — ask and I'll show the measurement, not just the claim. Reach me at <strong>fh1m.faisal.work@gmail.com</strong>.
+Every claim on this page can be checked against what's actually in the repos below. Reach me at <strong>fh1m.faisal.work@gmail.com</strong>.
 </sub>
