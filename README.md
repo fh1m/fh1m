@@ -29,6 +29,10 @@ Perception, estimation, and control for machines that operate outside the screen
 
 </div>
 
+[![SYSTEM MAP](https://img.shields.io/badge/SYSTEM_MAP-236b8e?style=for-the-badge&logo=mermaid&logoColor=ffffff)](#the-record)
+[![MEASURED SIGNALS](https://img.shields.io/badge/MEASURED_SIGNALS-8a6d3b?style=for-the-badge&logo=googleanalytics&logoColor=ffffff)](#measured-work)
+[![SOURCE](https://img.shields.io/badge/SOURCE-36454f?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
+
 ```mermaid
 flowchart LR
     S["sense<br/>camera · IMU · depth"] --> P["perceive<br/>vision · ML"]
@@ -44,25 +48,14 @@ The recurring problem is not “which framework?” It is whether the measuremen
 
 <sub>From first-principles software to integrated vehicle autonomy.</sub>
 
-**Foundations**<br>
-[Scripts](https://github.com/fh1m/Scripts) · [PDE](https://github.com/fh1m/PDE) · [linear regression](https://github.com/fh1m/Linear-Regression) · [decision trees](https://github.com/fh1m/decision-tree-classifier) · [calibration challenge](https://github.com/fh1m/calib_challenge_fh1m)
+| system surface | engineering signal | inspect |
+| --- | --- | --- |
+| **Foundations** | Python, C, first-principles ML, developer tooling | [Scripts](https://github.com/fh1m/Scripts) · [PDE](https://github.com/fh1m/PDE) · [ML](https://github.com/fh1m/Linear-Regression) |
+| **Vehicle systems** | underwater robotics, simulation, embedded sensing, mission software | [Duburi](https://github.com/fh1m/Duburi) · [simulator](https://github.com/fh1m/duburi-sim_ws) · [vision](https://github.com/fh1m/Arduino-Vision) |
+| **Edge perception** | on-device vision, prediction, image processing, compact protocols | [Dristy](https://github.com/fh1m/Dristy) · [tracking](https://github.com/fh1m/Track_and_Predict) · [P2P](https://github.com/fh1m/secure-terminal-p2p-chat) |
+| **Integrated autonomy** | ROS 2, MAVLink 2, Hailo-8, EKF, optical flow, board control | [Mongla](https://github.com/fh1m/mongla_ws) · [now](https://fh1m.github.io/now) · [log](https://fh1m.github.io/log) |
 
-Python, C, computer vision, first-principles ML, developer tooling, and the first attempts to make a machine infer something useful.
-
-**Vehicle systems**<br>
-[BRACU Duburi](https://github.com/fh1m/Duburi) · [Duburi R&D](https://github.com/fh1m/duburi-codebase_RND) · [Duburi simulator](https://github.com/fh1m/duburi-sim_ws) · [Arduino Vision](https://github.com/fh1m/Arduino-Vision)
-
-Underwater robotics, simulation, embedded sensing, mission software, and vision that had to work on hardware rather than in a notebook.
-
-**Perception becomes a subsystem**<br>
-[Dristy](https://github.com/fh1m/Dristy) · [tracking and prediction](https://github.com/fh1m/Track_and_Predict) · [colour-sign detection](https://github.com/fh1m/Detect-color-signs) · [secure P2P chat](https://github.com/fh1m/secure-terminal-p2p-chat)
-
-On-device vision, compact protocols, prediction, image processing, and systems that keep working when bandwidth and compute are limited.
-
-**Integrated autonomy**<br>
-[Mongla](https://github.com/fh1m/mongla_ws) · [portfolio and research log](https://fh1m.github.io/) · [current work](https://fh1m.github.io/now)
-
-ROS 2, MAVLink 2, board-level control, Hailo-8 perception, right-invariant EKF, optical flow, simulation, and evidence-labelled capability states.
+<sub>The work index carries the full catalogue; each row here is a change in engineering scope.</sub>
 
 ## Measured work
 
@@ -77,13 +70,24 @@ ROS 2, MAVLink 2, board-level control, Hailo-8 perception, right-invariant EKF, 
 | **4,208 tests** | the stack is larger than its demo |
 | **320 × 240 / 25.4 FPS** | Dristy gives a small camera a bounded job |
 
+<div align="center">
+
+[![TRACE THE STACK](https://img.shields.io/badge/TRACE_THE_STACK-236b8e?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
+[![READ THE TESTS](https://img.shields.io/badge/READ_THE_TESTS-3f7f6f?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/mongla_ws#testing)
+[![SEE THE EDGE PATH](https://img.shields.io/badge/SEE_THE_EDGE_PATH-8a6d3b?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/Dristy)
+
+</div>
+
 > An ESC can report a perfectly respectable zero with nothing attached. A message count is not proof that a thruster is alive.
 
 ## Research, leadership, and field work
 
 <sub>The surrounding work: research, competition systems, and engineering ownership.</sub>
 
-[Underwater domain generalization](https://fh1m.github.io/about) · [RoboSub log](https://fh1m.github.io/log) · [URC work](https://fh1m.github.io/work) · [current direction](https://fh1m.github.io/now)
+[![RESEARCH](https://img.shields.io/badge/RESEARCH-5c4b8a?style=for-the-badge&logo=readthedocs&logoColor=ffffff)](https://fh1m.github.io/about)
+[![FIELD LOG](https://img.shields.io/badge/FIELD_LOG-9a5b3f?style=for-the-badge&logo=target&logoColor=ffffff)](https://fh1m.github.io/log)
+[![COMPETITION WORK](https://img.shields.io/badge/COMPETITION_WORK-3f7f6f?style=for-the-badge&logo=trophy&logoColor=ffffff)](https://fh1m.github.io/work)
+[![CURRENT DIRECTION](https://img.shields.io/badge/CURRENT_DIRECTION-236b8e?style=for-the-badge&logo=compass&logoColor=ffffff)](https://fh1m.github.io/now)
 
 Rockets and UAVs: TVC control, flight computers, trajectory prediction, VSLAM, and GPS-denied navigation.<br>
 Rovers: inverse kinematics, edge alignment, OCR, and competition data pipelines.<br>
@@ -94,7 +98,18 @@ Leadership: engineering ownership across vision, autonomy integration, reliabili
 
 <sub>The tools are broad; the invariant is the full loop from sensor to actuator.</sub>
 
-`ROS 2` · `Python` · `C/C++` · `ESP32` · `K210` · `Hailo-8` · `MAVLink 2` · `OpenCV` · `EKF` · `Gazebo` · `ArduPilot`
+**Languages** · Python · C/C++<br>
+**Robotics** · ROS 2 · MAVLink 2 · Gazebo · ArduPilot<br>
+**Perception** · OpenCV · Hailo-8 · optical flow · EKF<br>
+**Embedded** · ESP32 · K210 · board-level control
+
+<div align="center">
+
+[![ROS 2 + AUTONOMY](https://img.shields.io/badge/ROS_2_%2B_AUTONOMY-236b8e?style=for-the-badge&logo=ros&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
+[![EDGE VISION](https://img.shields.io/badge/EDGE_VISION-3f7f6f?style=for-the-badge&logo=opencv&logoColor=ffffff)](https://github.com/fh1m/Dristy)
+[![FLIGHT + SIMULATION](https://img.shields.io/badge/FLIGHT_%2B_SIMULATION-8a6d3b?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/duburi-sim_ws)
+
+</div>
 
 <div align="center">
 
