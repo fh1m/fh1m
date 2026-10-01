@@ -12,37 +12,19 @@ Perception, estimation, and control for machines that operate outside the screen
 </td></tr>
 </table>
 
+<p align="center">
 [![Portfolio](https://img.shields.io/badge/PORTFOLIO-ffffff?style=for-the-badge&labelColor=90caf9&color=90caf9&logo=googlechrome&logoColor=000000)](https://fh1m.github.io/)
+&nbsp;&nbsp;
 [![Work index](https://img.shields.io/badge/WORK_INDEX-ffffff?style=for-the-badge&labelColor=ff8a80&color=ff8a80&logo=bookstack&logoColor=000000)](https://fh1m.github.io/work)
+&nbsp;&nbsp;
 [![Mongla](https://img.shields.io/badge/MONGLA-ffffff?style=for-the-badge&labelColor=64b5f6&color=64b5f6&logo=ros&logoColor=000000)](https://github.com/fh1m/mongla_ws)
+&nbsp;&nbsp;
 [![Repositories](https://img.shields.io/badge/24_REPOSITORIES-ffffff?style=for-the-badge&labelColor=cfd8dc&color=cfd8dc&logo=github&logoColor=000000)](https://github.com/fh1m?tab=repositories)
-
-<sub><b>Operating loop</b></sub><br>
-[![SENSE](https://img.shields.io/badge/SENSE-ffffff?style=flat-square&labelColor=90caf9&color=90caf9&logoColor=000000)](#the-record)
-[![ESTIMATE](https://img.shields.io/badge/ESTIMATE-ffffff?style=flat-square&labelColor=81d4fa&color=81d4fa&logoColor=000000)](#the-record)
-[![CONTROL](https://img.shields.io/badge/CONTROL-ffffff?style=flat-square&labelColor=ff8a80&color=ff8a80&logoColor=000000)](#the-record)
-[![ACT](https://img.shields.io/badge/ACT-ffffff?style=flat-square&labelColor=ef9a9a&color=ef9a9a&logoColor=000000)](#the-record)
+</p>
 
 </div>
 
 ## The record
-
-<sub>A compact view of the public engineering surface.</sub>
-
-<div align="center">
-
-| **PUBLIC WORK** | **ACTIVE PERIOD** | **CONTROL** | **VISION** | **TESTED STACK** |
-|:---:|:---:|:---:|:---:|:---:|
-| `24 repos` | `2023 - now` | `500 Hz` | `53.9 Hz` | `4,208 tests` |
-
-</div>
-
-<div align="center">
-
-[![SYSTEM MAP](https://img.shields.io/badge/SYSTEM_MAP-ffffff?style=for-the-badge&labelColor=90caf9&color=90caf9&logo=mermaid&logoColor=000000)](#the-record)
-[![SOURCE](https://img.shields.io/badge/SOURCE-ffffff?style=for-the-badge&labelColor=ff8a80&color=ff8a80&logo=github&logoColor=000000)](https://github.com/fh1m/mongla_ws)
-
-</div>
 
 ```mermaid
 flowchart LR
@@ -112,8 +94,7 @@ Leadership: engineering ownership across vision, autonomy integration, reliabili
 
 <div align="center">
 
-[![Full record](https://img.shields.io/badge/READ_THE_FULL_RECORD-ffffff?style=for-the-badge&labelColor=90caf9&color=90caf9&logo=readthedocs&logoColor=000000)](https://fh1m.github.io/)
-[![About](https://img.shields.io/badge/ABOUT-ffffff?style=for-the-badge&labelColor=ff8a80&color=ff8a80&logo=personio&logoColor=000000)](https://fh1m.github.io/about)
+[Full record](https://fh1m.github.io/) · [About](https://fh1m.github.io/about) · [Repositories](https://github.com/fh1m?tab=repositories)
 
 <sub>Dhaka, Bangladesh</sub>
 
