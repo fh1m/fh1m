@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="assets/lab-hero.png" width="640" alt="RoboSub workstation, BRACU Duburi, mid-build night" />
+<img src="assets/lab-hero.png" width="640" alt="late night at the workstation" />
 
-<sub><em>Duburi workstation, RoboSub 2025 — one of the later nights.</em></sub>
+<sub><em>the lab, one of the later nights.</em></sub>
 
 <br/><br/>
 
@@ -26,25 +26,31 @@ Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io) · *Proof of work,
 
 | underwater | ground | air |
 |---|---|---|
-| AUV autonomy — EKF state estimation, real-time vision, 500 Hz embedded control | rover autonomy — inverse kinematics, edge vision, GPS-denied navigation | GNC — thrust-vector control, flight software, rocketry |
+| state estimation, real-time vision, embedded control loops | inverse kinematics, edge vision, GPS-denied navigation | guidance, navigation and control, flight software |
 
-Proof of work, not adjectives. Numbers above are counted, not estimated — [method on the site](https://fh1m.github.io).
+Numbers above are counted, not estimated — [method on the site](https://fh1m.github.io).
 
 <br/>
 
-### selected work
+### how i think
 
-- **[mongla_ws](https://github.com/fh1m/mongla_ws)** — underwater autonomy stack, full writeup and retractions on the site
-- **[Duburi](https://github.com/fh1m/Duburi)** — the vehicle: hull, thrusters, control board · RoboSub 2025 semifinals, Entrepreneurship award
-- **[Dristy](https://github.com/fh1m/Dristy)** — embedded vision firmware and host API
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/philosophy-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/philosophy-light.svg">
+  <img src="assets/philosophy-light.svg" alt="Engineering principles: measurement over assumption, refusal over invention, separation of concerns, reality precedence">
+</picture>
 
-University Rover Challenge 2025 — global top 10. Two peer-reviewed papers. Four competition placements, three domains.
+The first principle is that you must not fool yourself — and you are the easiest person to fool.
 
 <br/>
 
 ### stack
 
-`Python` `C` `ROS 2` `MAVLink` `Hailo-8` `ESP32 / RISC-V` `EKF · VSLAM` `PyQt6`
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stack-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/stack-light.svg">
+  <img src="assets/stack-light.svg" alt="Python, C, ROS 2, MAVLink, Hailo-8, ESP32 / RISC-V, EKF and VSLAM, PyQt6">
+</picture>
 
 <br/>
 
