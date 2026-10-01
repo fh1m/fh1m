@@ -2,10 +2,11 @@
 
 <img src="assets/lab-hero.png" width="400" alt="late night at the workstation" />
 
+<br/>
+
 <sub><em>the robotics lab, one of the later nights.</em></sub>
 
 # fh1m
-<br/>
 
 **Autonomy engineer.** Machines that perceive, reason, and act — built to still operate after everyone who could check on them has gone home.
 
