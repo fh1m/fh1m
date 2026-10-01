@@ -1,12 +1,12 @@
 <div align="center">
 
-<img src="assets/lab-hero.png" width="300" alt="late night at the workstation" />
+<img src="assets/lab-hero.png" width="400" alt="late night at the workstation" />
 
-<sub><em>the lab, one of the later nights.</em></sub>
+<sub><em>the robotics lab, one of the later nights.</em></sub>
 
 # fh1m
 
-**Autonomy engineer.** Machines that perceive, reason, and act — built to still be right after everyone who could check on them has gone home.
+**Autonomy engineer.** Machines that perceive, reason, and act — built to still operate after everyone who could check on them has gone home.
 
 Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io)
 
@@ -66,12 +66,12 @@ That's the actual job, underneath the ROS nodes and the control loops: deciding 
 
 <div align="center">
 
-*Ship the version that's honest. Make it fast after.*
+*Ship the version that's honest. Make it fast after. then better. the loop*
 
 </div>
 
 <br/>
 
 <sub>
-Every claim on this page can be checked against what's actually in the repos below. Reach me at <strong>fh1m.faisal.work@gmail.com</strong>.
+I love uncle shifu & B99 hehe. Reach me at <strong>fh1m.faisal.work@gmail.com</strong>.
 </sub>
