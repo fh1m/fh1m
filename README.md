@@ -1,4 +1,6 @@
-<div align="center">
+<table align="center" width="100%" cellpadding="18" cellspacing="0">
+<tr>
+<td valign="top" align="center" width="68%">
 
 # fh1m
 
@@ -6,20 +8,43 @@
 
 Perception, estimation, and control for machines that operate outside the screen.
 
-<img align="right" width="250" src="assets/duburi-workstation.png" alt="fh1m working at the BRAC University Duburi workstation">
-
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-1565c0?style=for-the-badge&logo=googlechrome&logoColor=ffffff)](https://fh1m.github.io/)
-[![Work index](https://img.shields.io/badge/WORK_INDEX-e53935?style=for-the-badge&logo=bookstack&logoColor=ffffff)](https://fh1m.github.io/work)
-[![Mongla](https://img.shields.io/badge/MONGLA-0d47a1?style=for-the-badge&logo=ros&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
-[![Repositories](https://img.shields.io/badge/24_REPOSITORIES-37474f?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m?tab=repositories)
-[![Engineering log](https://img.shields.io/badge/ENGINEERING_LOG-c62828?style=for-the-badge&logo=readthedocs&logoColor=ffffff)](https://fh1m.github.io/log)
-[![Current focus](https://img.shields.io/badge/CURRENT_FOCUS-1976d2?style=for-the-badge&logo=target&logoColor=ffffff)](https://fh1m.github.io/now)
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-ffffff?style=for-the-badge&labelColor=90caf9&logo=googlechrome&logoColor=000000)](https://fh1m.github.io/)
+[![Work index](https://img.shields.io/badge/WORK_INDEX-ffffff?style=for-the-badge&labelColor=ff8a80&logo=bookstack&logoColor=000000)](https://fh1m.github.io/work)
+[![Mongla](https://img.shields.io/badge/MONGLA-ffffff?style=for-the-badge&labelColor=64b5f6&logo=ros&logoColor=000000)](https://github.com/fh1m/mongla_ws)
+[![Repositories](https://img.shields.io/badge/24_REPOSITORIES-ffffff?style=for-the-badge&labelColor=cfd8dc&logo=github&logoColor=000000)](https://github.com/fh1m?tab=repositories)
+[![Engineering log](https://img.shields.io/badge/ENGINEERING_LOG-ffffff?style=for-the-badge&labelColor=ef9a9a&logo=readthedocs&logoColor=000000)](https://fh1m.github.io/log)
+[![Current focus](https://img.shields.io/badge/CURRENT_FOCUS-ffffff?style=for-the-badge&labelColor=42a5f5&logo=target&logoColor=000000)](https://fh1m.github.io/now)
 
 <sub>Portfolio = context · Work index = breadth · Mongla = deepest current system · Repositories = source · Log = chronology · Now = active direction</sub>
 
-<br clear="right">
+<table align="center" cellpadding="8" cellspacing="0">
+<tr>
+<td align="center"><b>SENSE</b><br><sub>camera · IMU · depth</sub></td>
+<td align="center">→</td>
+<td align="center"><b>ESTIMATE</b><br><sub>EKF · optical flow</sub></td>
+<td align="center">→</td>
+<td align="center"><b>CONTROL</b><br><sub>firmware · GNC</sub></td>
+<td align="center">→</td>
+<td align="center"><b>ACT</b><br><sub>ESC · gimbal · vehicle</sub></td>
+</tr>
+</table>
 
-</div>
+<sub><b>Truth states:</b> bench → built → blocked → water. Capability is earned at the hardware boundary.</sub>
+
+</td>
+<td valign="top" align="center" width="32%">
+
+<table border="1" cellpadding="10" cellspacing="0">
+<tr><td align="center">
+<img width="250" src="assets/duburi-workstation.png" alt="fh1m working at the BRAC University Duburi workstation">
+<br>
+<sub><i>One of my favourite—and now last—views from the Duburi lab desk. I will not return to this desk; that is life. The work remains in the systems built there.</i></sub>
+</td></tr>
+</table>
+
+</td>
+</tr>
+</table>
 
 ## The record
 
