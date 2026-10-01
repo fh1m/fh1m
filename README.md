@@ -4,71 +4,86 @@
 
 **Autonomy systems · robotics · embedded control**
 
-Perception, estimation, and control for underwater, aerial, and ground robots.
+Perception, estimation, and control for machines that operate outside the screen.
 
 [![Portfolio](https://img.shields.io/badge/PORTFOLIO-0b0d12?style=for-the-badge&logo=googlechrome&logoColor=8ecdf0)](https://fh1m.github.io/)
-[![Mongla](https://img.shields.io/badge/MONGLA-0b0d12?style=for-the-badge&logo=ros&logoColor=d6a35e)](https://github.com/fh1m/mongla_ws)
-[![Repositories](https://img.shields.io/badge/REPOSITORIES-0b0d12?style=for-the-badge&logo=github&logoColor=f4f1ea)](https://github.com/fh1m?tab=repositories)
+[![24 repositories](https://img.shields.io/badge/24_PUBLIC_REPOSITORIES-0b0d12?style=for-the-badge&logo=github&logoColor=f4f1ea)](https://github.com/fh1m?tab=repositories)
+[![Engineering log](https://img.shields.io/badge/ENGINEERING_LOG-0b0d12?style=for-the-badge&logo=readthedocs&logoColor=d6a35e)](https://fh1m.github.io/log)
 
 </div>
 
-## Technical record
+## The record
 
 <div align="center">
 
-| **CONTROL** | **VISION** | **LATENCY** | **PROTOCOL** | **VERIFICATION** |
+| **PUBLIC WORK** | **ACTIVE PERIOD** | **CONTROL** | **VISION** | **TESTED STACK** |
 |:---:|:---:|:---:|:---:|:---:|
-| ![500 Hz](https://img.shields.io/badge/500_Hz-board_loop-cc6b5c?style=flat-square) | ![53.9 Hz](https://img.shields.io/badge/53.9_Hz-Hailo--8-5b9bd5?style=flat-square) | ![18.0 ms](https://img.shields.io/badge/18.0_ms-photon_to_detection-d6a35e?style=flat-square) | ![44 bytes](https://img.shields.io/badge/44_bytes-MAVLink_2-7a8f65?style=flat-square) | ![4,208 tests](https://img.shields.io/badge/4,208-tests-8b78a5?style=flat-square) |
+| `24 repos` | `2023 → now` | `500 Hz` | `53.9 Hz` | `4,208 tests` |
 
 </div>
 
-## System focus
-
 ```mermaid
 flowchart LR
-    S["sensors<br/>camera · IMU · depth"] --> P["perception<br/>Hailo-8 · vision"]
-    P --> E["estimation<br/>EKF · optical flow"]
-    E --> D["decision<br/>mission · safety gates"]
-    D --> C["control<br/>500 Hz board loop"]
-    C --> A["actuation<br/>mixer · ESC · vehicle"]
-    C -. "feedback" .-> S
+    S["sense<br/>camera · IMU · depth"] --> P["perceive<br/>vision · ML"]
+    P --> E["estimate<br/>EKF · optical flow"]
+    E --> C["control<br/>firmware · GNC"]
+    C --> A["act<br/>ESC · gimbal · vehicle"]
+    A -. feedback .-> S
 ```
 
-The engineering problem is the boundary between each block: timing, uncertainty, interfaces, and failure behavior.
+The recurring problem is not “which framework?” It is whether the measurement arrives in time, the estimate is honest, and the actuator does what the model asked.
 
-## Selected systems
+## Engineering trajectory
 
-### [Mongla](https://github.com/fh1m/mongla_ws)
+**Foundations**<br>
+[Scripts](https://github.com/fh1m/Scripts) · [PDE](https://github.com/fh1m/PDE) · [linear regression](https://github.com/fh1m/Linear-Regression) · [decision trees](https://github.com/fh1m/decision-tree-classifier) · [calibration challenge](https://github.com/fh1m/calib_challenge_fh1m)
 
-![ROS 2](https://img.shields.io/badge/ROS_2-Jazzy%20%7C%20Humble-22314e?style=flat-square&logo=ros)
-![Control](https://img.shields.io/badge/control-500_Hz-cc6b5c?style=flat-square)
-![Vision](https://img.shields.io/badge/vision-Hailo--8-5b9bd5?style=flat-square)
+Python, C, computer vision, first-principles ML, developer tooling, and the first attempts to make a machine infer something useful.
 
-Underwater autonomy stack: board-level control, edge perception, optical flow, right-invariant EKF, and explicit `BENCH / BUILT / BLOCKED / WATER` capability states.
+**Vehicle systems**<br>
+[BRACU Duburi](https://github.com/fh1m/Duburi) · [Duburi R&D](https://github.com/fh1m/duburi-codebase_RND) · [Duburi simulator](https://github.com/fh1m/duburi-sim_ws) · [Arduino Vision](https://github.com/fh1m/Arduino-Vision)
 
-### [Dristy](https://github.com/fh1m/Dristy)
+Underwater robotics, simulation, embedded sensing, mission software, and vision that had to work on hardware rather than in a notebook.
 
-![K210](https://img.shields.io/badge/K210-on--device_vision-5b9bd5?style=flat-square)
-![Camera](https://img.shields.io/badge/camera-320×240-7a8f65?style=flat-square)
-![Runtime](https://img.shields.io/badge/runtime-25.4_FPS-d6a35e?style=flat-square)
+**Perception becomes a subsystem**<br>
+[Dristy](https://github.com/fh1m/Dristy) · [tracking and prediction](https://github.com/fh1m/Track_and_Predict) · [colour-sign detection](https://github.com/fh1m/Detect-color-signs) · [secure P2P chat](https://github.com/fh1m/secure-terminal-p2p-chat)
 
-Vision co-processor for detection, colour, motion, QR, tags, and optical flow. The robot receives a compact result, not a video stream.
+On-device vision, compact protocols, prediction, image processing, and systems that keep working when bandwidth and compute are limited.
 
-### [Flight and field robotics](https://fh1m.github.io/)
+**Integrated autonomy**<br>
+[Mongla](https://github.com/fh1m/mongla_ws) · [portfolio and research log](https://fh1m.github.io/) · [current work](https://fh1m.github.io/now)
 
-![GNC](https://img.shields.io/badge/GNC-TVC_%7C_VSLAM-8b78a5?style=flat-square)
-![Robotics](https://img.shields.io/badge/field-rovers_%7C_arms-7a8f65?style=flat-square)
-![Navigation](https://img.shields.io/badge/navigation-GPS--denied-cc6b5c?style=flat-square)
+ROS 2, MAVLink 2, board-level control, Hailo-8 perception, right-invariant EKF, optical flow, simulation, and evidence-labelled capability states.
 
-Flight computers, trajectory prediction, rover manipulation, OCR, and competition data pipelines.
+## Measured work
 
-## Engineering surface
+| signal | what it says |
+| --- | --- |
+| **500 Hz** | the reflex loop belongs on the board |
+| **53.9 Hz** | edge vision can produce a usable observation |
+| **18.0 ms** | photon-to-detection was measured, not guessed |
+| **44 bytes** | a movement request can cross the cable without smuggling in actuator logic |
+| **4,208 tests** | the stack is larger than its demo |
+| **320 × 240 / 25.4 FPS** | Dristy gives a small camera a bounded job |
+
+> An ESC can report a perfectly respectable zero with nothing attached. A message count is not proof that a thruster is alive.
+
+## Research, leadership, and field work
+
+[Underwater domain generalization](https://fh1m.github.io/about) · [RoboSub log](https://fh1m.github.io/log) · [URC work](https://fh1m.github.io/work) · [current direction](https://fh1m.github.io/now)
+
+Rockets and UAVs: TVC control, flight computers, trajectory prediction, VSLAM, and GPS-denied navigation.<br>
+Rovers: inverse kinematics, edge alignment, OCR, and competition data pipelines.<br>
+Research: underwater object detection and recommendation systems.<br>
+Leadership: engineering ownership across vision, autonomy integration, reliability, and field execution.
+
+## Technical surface
 
 `ROS 2` · `Python` · `C/C++` · `ESP32` · `K210` · `Hailo-8` · `MAVLink 2` · `OpenCV` · `EKF` · `Gazebo` · `ArduPilot`
 
 <div align="center">
 
-[![Read the portfolio](https://img.shields.io/badge/READ_THE_PORTFOLIO-0b0d12?style=for-the-badge&logo=readthedocs&logoColor=8ecdf0)](https://fh1m.github.io/)
+[![Full record](https://img.shields.io/badge/READ_THE_FULL_RECORD-0b0d12?style=for-the-badge&logo=readthedocs&logoColor=8ecdf0)](https://fh1m.github.io/)
 
 <sub>Dhaka, Bangladesh</sub>
 
