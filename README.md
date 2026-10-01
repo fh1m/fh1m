@@ -1,24 +1,18 @@
-<table>
-<tr>
-<td width="380">
-<img src="assets/lab-hero.png" width="380" alt="RoboSub workstation, BRACU Duburi, mid-build night" />
-<br/>
+<div align="center">
+
+<img src="assets/lab-hero.png" width="640" alt="RoboSub workstation, BRACU Duburi, mid-build night" />
+
 <sub><em>Duburi workstation, RoboSub 2025 — one of the later nights.</em></sub>
-</td>
-<td valign="top">
-<br/>
+
+<br/><br/>
 
 # Fahim Faisal
 
-**Autonomy engineer.** I build machines that perceive, reason, and act — underwater, in the air, and on the ground — and that have to work correctly when nobody is watching.
+**Autonomy engineer.** Machines that perceive, reason, and act — underwater, in the air, on the ground — and that have to work correctly when nobody is watching.
 
-Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io)
+Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io) · *Proof of work, not adjectives.*
 
-> *Proof of work, not adjectives.*
-
-</td>
-</tr>
-</table>
+</div>
 
 <br/>
 
