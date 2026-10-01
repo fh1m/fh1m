@@ -1,0 +1,23 @@
+<svg width="760" height="92" viewBox="0 0 760 92" xmlns="http://www.w3.org/2000/svg" font-family="SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace">
+  <rect width="760" height="92" fill="#ffffff"/>
+
+  <line x1="176" y1="16" x2="176" y2="76" stroke="#d0d7de"/>
+  <line x1="312" y1="16" x2="312" y2="76" stroke="#d0d7de"/>
+  <line x1="448" y1="16" x2="448" y2="76" stroke="#d0d7de"/>
+  <line x1="584" y1="16" x2="584" y2="76" stroke="#d0d7de"/>
+
+  <text x="108" y="44" fill="#1f2328" font-size="26" font-weight="600" text-anchor="middle">24</text>
+  <text x="108" y="64" fill="#57606a" font-size="10.5" letter-spacing="1" text-anchor="middle">PUBLIC REPOS</text>
+
+  <text x="244" y="44" fill="#1f2328" font-size="26" font-weight="600" text-anchor="middle">11</text>
+  <text x="244" y="64" fill="#57606a" font-size="10.5" letter-spacing="1" text-anchor="middle">SHIPPED</text>
+
+  <text x="380" y="44" fill="#1f2328" font-size="26" font-weight="600" text-anchor="middle">3</text>
+  <text x="380" y="64" fill="#57606a" font-size="10.5" letter-spacing="1" text-anchor="middle">DOMAINS</text>
+
+  <text x="516" y="44" fill="#1f2328" font-size="26" font-weight="600" text-anchor="middle">4</text>
+  <text x="516" y="64" fill="#57606a" font-size="10.5" letter-spacing="1" text-anchor="middle">PLACEMENTS</text>
+
+  <text x="652" y="44" fill="#1f2328" font-size="26" font-weight="600" text-anchor="middle">2</text>
+  <text x="652" y="64" fill="#57606a" font-size="10.5" letter-spacing="1" text-anchor="middle">PAPERS</text>
+</svg>

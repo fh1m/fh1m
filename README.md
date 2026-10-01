@@ -24,42 +24,27 @@ Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io)
 
 ### what i build
 
-[**Mongla**](https://github.com/fh1m/mongla_ws) is the autonomy stack for a 702 mm AUV: a 500 Hz control loop on an isolated ESP32 core, Hailo‑8 vision running at 53.9 Hz, and a right‑invariant EKF fusing IMU, depth, and vision into one state estimate. Reflexes stay on the board. Thinking stays on the Pi. Nothing crosses that cable except a command.
-
-```
-photon ──capture──undistort──detect (Hailo-8)──track──EKF fuse──decide──actuate
-        |────────────────── 18.0 ms, photon to actuation ──────────────────|
-        |──────────────────────── budget: 40 ms ────────────────────────────|
-
-  control loop   500 Hz    ESP32, isolated core, 500 Hz regardless of what the Pi is doing
-  vision          53.9 Hz   Hailo-8, measured, not spec-sheet
-```
-
-Vision verbs return discrete states — `ALIGNED`, `LOST`, `TIMEOUT`, `NO_CAMERA`, `ABORTED` — never a guess dressed up as a target. Missing data renders as `--`, never as zero.
-
-<br/>
-
-### proof, not adjectives
-
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/capability-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/capability-light.svg">
-  <img src="assets/capability-light.svg" alt="Mongla capability map: 30 bench-verified, 24 built but untested, 3 blocked, 0 water-verified, out of 57 claimed capabilities">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stat-strip-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/stat-strip-light.svg">
+  <img src="assets/stat-strip-light.svg" alt="24 public repos, 11 shipped, 3 domains, 4 competition placements, 2 papers">
 </picture>
 
-A capability map that hides the blocked rows is marketing. This one doesn't. The `0` above is a real, counted row — not an omission — because the first principle is that you must not fool yourself, and you are the easiest person to fool.
+| underwater | ground | air |
+|---|---|---|
+| AUV autonomy — EKF state estimation, real-time vision, 500 Hz embedded control | rover autonomy — inverse kinematics, edge vision, GPS-denied navigation | GNC — thrust-vector control, flight software, rocketry |
+
+Proof of work, not adjectives. Numbers above are counted, not estimated — [method on the site](https://fh1m.github.io).
 
 <br/>
 
 ### selected work
 
-| | |
-|---|---|
-| [**mongla_ws**](https://github.com/fh1m/mongla_ws) | The autonomy stack above. 1,038 commits, sole author, 3,756 tests passing. Full writeup, retractions included, on the site. |
-| [**Duburi**](https://github.com/fh1m/Duburi) | The vehicle itself — hull, thrusters, control board. RoboSub 2025 semifinals, Entrepreneurship award. |
-| [**Dristy**](https://github.com/fh1m/Dristy) | K210 vision firmware and host API — the eyes, before they were Hailo's problem. |
+- **[mongla_ws](https://github.com/fh1m/mongla_ws)** — underwater autonomy stack, full writeup and retractions on the site
+- **[Duburi](https://github.com/fh1m/Duburi)** — the vehicle: hull, thrusters, control board · RoboSub 2025 semifinals, Entrepreneurship award
+- **[Dristy](https://github.com/fh1m/Dristy)** — embedded vision firmware and host API
 
-**Also:** University Rover Challenge 2025 — global top 10, ground rover autonomy. Two peer-reviewed papers. Four competition placements across underwater, ground, and air.
+University Rover Challenge 2025 — global top 10. Two peer-reviewed papers. Four competition placements, three domains.
 
 <br/>
 
