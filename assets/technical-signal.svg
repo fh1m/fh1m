@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" role="img" aria-labelledby="title desc">
+  <title id="title">Fahim Faisal technical signal</title>
+  <desc id="desc">Measured engineering signals: 500 hertz control, 53.9 hertz edge vision, 18.0 milliseconds photon to detection, 44 byte command, and 4,208 tests.</desc>
+  <style>
+    @font-face {
+      font-family: "Zed Mono";
+      src: url("https://fh1m.github.io/fonts/zed-mono-extended.woff2") format("woff2");
+    }
+    text { font-family: "Zed Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .k { fill: #d6a35e; font-size: 25px; font-weight: 600; }
+    .v { fill: #aab6c5; font-size: 12px; letter-spacing: 1.4px; }
+    .rule { stroke: #263343; }
+  </style>
+  <rect width="1200" height="150" rx="10" fill="#080b10"/>
+  <path d="M40 34H1160M40 116H1160" class="rule"/>
+  <g transform="translate(58 58)">
+    <text class="k">500 Hz</text><text y="28" class="v">BOARD LOOP</text>
+  </g>
+  <g transform="translate(292 58)">
+    <text class="k">53.9 Hz</text><text y="28" class="v">EDGE VISION</text>
+  </g>
+  <g transform="translate(526 58)">
+    <text class="k">18.0 ms</text><text y="28" class="v">PHOTON → DETECTION</text>
+  </g>
+  <g transform="translate(806 58)">
+    <text class="k">44 bytes</text><text y="28" class="v">ONE MAVLINK COMMAND</text>
+  </g>
+  <g transform="translate(1080 58)">
+    <text class="k">4,208</text><text y="28" class="v">TESTS</text>
+  </g>
+</svg>
