@@ -38,25 +38,19 @@ That's the actual job, underneath the ROS nodes and the control loops: deciding 
   <img src="assets/rule-light.svg" width="100%" alt="">
 </picture>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/rule-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/rule-light.svg">
-  <img src="assets/rule-light.svg" width="100%" alt="">
-</picture>
-
 ### a few things I hold as load-bearing
 
-A system I didn't build, I don't extend blind — I take it apart until I can explain every piece back in my own words, and only then do I trust it with something that matters.
+* A system I didn't build, I don't extend blind — I take it apart until I can explain every piece back in my own words, and only then do I trust it with something that matters.
 
-A claim without a method attached isn't a fact yet. It's a rumor wearing a lab coat, and I treat it that way until it earns better.
+* A claim without a method attached isn't a fact yet. It's a rumor wearing a lab coat, and I treat it that way until it earns better.
 
-Working once, under ideal conditions, in a demo, isn't engineering. It's a coin flip with good lighting. The version that counts is the one that still works on the night nobody's filming.
+* Working once, under ideal conditions, in a demo, isn't engineering. It's a coin flip with good lighting. The version that counts is the one that still works on the night nobody's filming.
 
-Hardware doesn't negotiate. You can argue with a product manager; you cannot argue with a thruster that draws more current than the ESC can source. I like that. It's the most honest collaborator I've worked with.
+* Hardware doesn't negotiate. You can argue with a product manager; you cannot argue with a thruster that draws more current than the ESC can source. I like that. It's the most honest collaborator I've worked with.
 
 <br/>
 
-> A heartbeat message tells you the wire is fine. It has never once told you the propeller is still attached to the shaft.
+  > A heartbeat message tells you the wire is fine. It has never once told you the propeller is still attached to the shaft.
 
 <br/>
 
@@ -65,8 +59,6 @@ Hardware doesn't negotiate. You can argue with a product manager; you cannot arg
   <source media="(prefers-color-scheme: light)" srcset="assets/rule-light.svg">
   <img src="assets/rule-light.svg" width="100%" alt="">
 </picture>
-
-Python · C · ROS 2 · MAVLink · Hailo-8 · ESP32 / RISC-V · EKF · VSLAM · PyQt6
 
 <br/>
 
