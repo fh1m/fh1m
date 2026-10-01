@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 430" role="img" aria-labelledby="title desc">
+  <title id="title">Autonomy field notes plate</title>
+  <desc id="desc">A technical instrument plate showing a recurring autonomy loop: sense, estimate, decide, act, with measurement labels and a 500 hertz control signal.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080a0f"/>
+      <stop offset="1" stop-color="#121923"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#75b9d6" stop-opacity=".1"/>
+      <stop offset=".5" stop-color="#75b9d6" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#f0a06b" stop-opacity=".1"/>
+    </linearGradient>
+    <style>
+      .micro { font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 2px; fill: #7d8b9d; }
+      .title { font: 600 22px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 3px; fill: #f4f1ea; }
+      .detail { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #aab6c5; }
+      .num { font: 600 38px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #f4f1ea; }
+    </style>
+  </defs>
+  <rect width="1400" height="430" rx="22" fill="url(#bg)"/>
+  <path d="M40 74H1360M40 356H1360" stroke="#263343"/>
+  <path d="M40 92H1360M40 338H1360" stroke="#1a2531" stroke-dasharray="2 8"/>
+  <text x="54" y="48" class="micro">FIELD NOTE / 00 — THE RECURRING QUESTION</text>
+  <text x="1180" y="48" class="micro">FH1M / AUTONOMY SYSTEMS</text>
+  <text x="700" y="118" text-anchor="middle" class="title">sense → estimate → decide → act</text>
+  <text x="700" y="145" text-anchor="middle" class="detail">software is the argument; the machine is the review</text>
+
+  <g transform="translate(80 185)">
+    <circle cx="90" cy="65" r="62" fill="#0d1720" stroke="#75b9d6" stroke-width="2"/>
+    <circle cx="90" cy="65" r="38" fill="none" stroke="#75b9d6" stroke-opacity=".55"/>
+    <path d="M90 12V38M90 92V118M37 65H63M117 65H143" stroke="#75b9d6" stroke-width="2"/>
+    <circle cx="90" cy="65" r="8" fill="#75b9d6"/>
+    <text x="90" y="158" text-anchor="middle" class="micro">01 / SENSE</text>
+    <text x="90" y="180" text-anchor="middle" class="detail">camera · IMU · depth</text>
+  </g>
+  <g transform="translate(380 185)">
+    <circle cx="90" cy="65" r="62" fill="#15151d" stroke="#d6a35e" stroke-width="2"/>
+    <path d="M34 88C54 28 71 108 91 47S127 42 148 20" fill="none" stroke="#d6a35e" stroke-width="3"/>
+    <path d="M34 103H148" stroke="#d6a35e" stroke-opacity=".35"/>
+    <text x="90" y="158" text-anchor="middle" class="micro">02 / ESTIMATE</text>
+    <text x="90" y="180" text-anchor="middle" class="detail">state · uncertainty · time</text>
+  </g>
+  <g transform="translate(680 185)">
+    <circle cx="90" cy="65" r="62" fill="#17151d" stroke="#e4816f" stroke-width="2"/>
+    <path d="M44 89L73 54L98 76L138 30" fill="none" stroke="#e4816f" stroke-width="3"/>
+    <circle cx="44" cy="89" r="5" fill="#e4816f"/>
+    <circle cx="73" cy="54" r="5" fill="#e4816f"/>
+    <circle cx="98" cy="76" r="5" fill="#e4816f"/>
+    <circle cx="138" cy="30" r="5" fill="#e4816f"/>
+    <text x="90" y="158" text-anchor="middle" class="micro">03 / DECIDE</text>
+    <text x="90" y="180" text-anchor="middle" class="detail">intent · gate · refusal</text>
+  </g>
+  <g transform="translate(980 185)">
+    <circle cx="90" cy="65" r="62" fill="#0f1a18" stroke="#71c9a5" stroke-width="2"/>
+    <path d="M40 102h25V70h25v32h25V45h25v57" fill="none" stroke="#71c9a5" stroke-width="8" stroke-linecap="square"/>
+    <text x="90" y="158" text-anchor="middle" class="micro">04 / ACT</text>
+    <text x="90" y="180" text-anchor="middle" class="detail">firmware · actuator · consequence</text>
+  </g>
+  <g fill="#566577">
+    <path d="M285 250l24-10v20z"/>
+    <path d="M585 250l24-10v20z"/>
+    <path d="M885 250l24-10v20z"/>
+  </g>
+  <path d="M130 326H1270" stroke="url(#glow)" stroke-width="2"/>
+  <circle cx="460" cy="326" r="4" fill="#75b9d6"/>
+  <circle cx="700" cy="326" r="4" fill="#d6a35e"/>
+  <circle cx="940" cy="326" r="4" fill="#e4816f"/>
+  <text x="150" y="389" class="micro">CONTROL PATH</text>
+  <text x="430" y="389" class="num">500 Hz</text>
+  <text x="590" y="389" class="micro">BOARD LOOP</text>
+  <text x="850" y="389" class="num">53.9 Hz</text>
+  <text x="1060" y="389" class="micro">EDGE VISION</text>
+</svg>
