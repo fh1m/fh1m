@@ -39,12 +39,6 @@ That's the actual job, underneath the ROS nodes and the control loops: deciding 
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/rail-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/rail-light.svg">
-  <img src="assets/rail-light.svg" alt="  24 repos, 11 shipped, 3 domains, 4 placements, 2 papers  ">
-</picture>
-
-<picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/rule-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/rule-light.svg">
   <img src="assets/rule-light.svg" width="100%" alt="">
