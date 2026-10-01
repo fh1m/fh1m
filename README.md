@@ -61,6 +61,8 @@ That's the actual job, underneath the ROS nodes and the control loops: deciding 
 </picture>
 
 <br/>
+<br/>
+
 
 <div align="center">
 
