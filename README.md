@@ -6,13 +6,20 @@
 
 Perception, estimation, and control for machines that operate outside the screen.
 
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-0b0d12?style=for-the-badge&logo=googlechrome&logoColor=8ecdf0)](https://fh1m.github.io/)
-[![24 repositories](https://img.shields.io/badge/24_PUBLIC_REPOSITORIES-0b0d12?style=for-the-badge&logo=github&logoColor=f4f1ea)](https://github.com/fh1m?tab=repositories)
-[![Engineering log](https://img.shields.io/badge/ENGINEERING_LOG-0b0d12?style=for-the-badge&logo=readthedocs&logoColor=d6a35e)](https://fh1m.github.io/log)
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-236b8e?style=for-the-badge&logo=googlechrome&logoColor=ffffff)](https://fh1m.github.io/)
+[![Work index](https://img.shields.io/badge/WORK_INDEX-3f7f6f?style=for-the-badge&logo=bookstack&logoColor=ffffff)](https://fh1m.github.io/work)
+[![Mongla](https://img.shields.io/badge/MONGLA-8a6d3b?style=for-the-badge&logo=ros&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
+[![Repositories](https://img.shields.io/badge/24_REPOSITORIES-36454f?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m?tab=repositories)
+[![Engineering log](https://img.shields.io/badge/ENGINEERING_LOG-5c4b8a?style=for-the-badge&logo=readthedocs&logoColor=ffffff)](https://fh1m.github.io/log)
+[![Current focus](https://img.shields.io/badge/CURRENT_FOCUS-9a5b3f?style=for-the-badge&logo=target&logoColor=ffffff)](https://fh1m.github.io/now)
+
+<sub>Portfolio = context · Work index = breadth · Mongla = deepest current system · Repositories = source · Log = chronology · Now = active direction</sub>
 
 </div>
 
 ## The record
+
+<sub>A compact view of the public engineering surface.</sub>
 
 <div align="center">
 
@@ -34,6 +41,8 @@ flowchart LR
 The recurring problem is not “which framework?” It is whether the measurement arrives in time, the estimate is honest, and the actuator does what the model asked.
 
 ## Engineering trajectory
+
+<sub>From first-principles software to integrated vehicle autonomy.</sub>
 
 **Foundations**<br>
 [Scripts](https://github.com/fh1m/Scripts) · [PDE](https://github.com/fh1m/PDE) · [linear regression](https://github.com/fh1m/Linear-Regression) · [decision trees](https://github.com/fh1m/decision-tree-classifier) · [calibration challenge](https://github.com/fh1m/calib_challenge_fh1m)
@@ -57,6 +66,8 @@ ROS 2, MAVLink 2, board-level control, Hailo-8 perception, right-invariant EKF, 
 
 ## Measured work
 
+<sub>Numbers are here to define interfaces and limits, not decorate the page.</sub>
+
 | signal | what it says |
 | --- | --- |
 | **500 Hz** | the reflex loop belongs on the board |
@@ -70,6 +81,8 @@ ROS 2, MAVLink 2, board-level control, Hailo-8 perception, right-invariant EKF, 
 
 ## Research, leadership, and field work
 
+<sub>The surrounding work: research, competition systems, and engineering ownership.</sub>
+
 [Underwater domain generalization](https://fh1m.github.io/about) · [RoboSub log](https://fh1m.github.io/log) · [URC work](https://fh1m.github.io/work) · [current direction](https://fh1m.github.io/now)
 
 Rockets and UAVs: TVC control, flight computers, trajectory prediction, VSLAM, and GPS-denied navigation.<br>
@@ -79,11 +92,17 @@ Leadership: engineering ownership across vision, autonomy integration, reliabili
 
 ## Technical surface
 
+<sub>The tools are broad; the invariant is the full loop from sensor to actuator.</sub>
+
 `ROS 2` · `Python` · `C/C++` · `ESP32` · `K210` · `Hailo-8` · `MAVLink 2` · `OpenCV` · `EKF` · `Gazebo` · `ArduPilot`
 
 <div align="center">
 
-[![Full record](https://img.shields.io/badge/READ_THE_FULL_RECORD-0b0d12?style=for-the-badge&logo=readthedocs&logoColor=8ecdf0)](https://fh1m.github.io/)
+[![Full record](https://img.shields.io/badge/READ_THE_FULL_RECORD-236b8e?style=for-the-badge&logo=readthedocs&logoColor=ffffff)](https://fh1m.github.io/)
+[![About](https://img.shields.io/badge/ABOUT-3f7f6f?style=for-the-badge&logo=personio&logoColor=ffffff)](https://fh1m.github.io/about)
+[![Source repositories](https://img.shields.io/badge/SOURCE_REPOSITORIES-36454f?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m?tab=repositories)
+
+<sub>Start with the work index for breadth, Mongla for depth, and the repositories when the claim needs inspection.</sub>
 
 <sub>Dhaka, Bangladesh</sub>
 
