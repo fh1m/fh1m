@@ -6,14 +6,18 @@
 
 Perception, estimation, and control for machines that operate outside the screen.
 
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-236b8e?style=for-the-badge&logo=googlechrome&logoColor=ffffff)](https://fh1m.github.io/)
-[![Work index](https://img.shields.io/badge/WORK_INDEX-3f7f6f?style=for-the-badge&logo=bookstack&logoColor=ffffff)](https://fh1m.github.io/work)
-[![Mongla](https://img.shields.io/badge/MONGLA-8a6d3b?style=for-the-badge&logo=ros&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
-[![Repositories](https://img.shields.io/badge/24_REPOSITORIES-36454f?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m?tab=repositories)
-[![Engineering log](https://img.shields.io/badge/ENGINEERING_LOG-5c4b8a?style=for-the-badge&logo=readthedocs&logoColor=ffffff)](https://fh1m.github.io/log)
-[![Current focus](https://img.shields.io/badge/CURRENT_FOCUS-9a5b3f?style=for-the-badge&logo=target&logoColor=ffffff)](https://fh1m.github.io/now)
+<img align="right" width="250" src="assets/duburi-workstation.png" alt="fh1m working at the BRAC University Duburi workstation">
+
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-1565c0?style=for-the-badge&logo=googlechrome&logoColor=ffffff)](https://fh1m.github.io/)
+[![Work index](https://img.shields.io/badge/WORK_INDEX-e53935?style=for-the-badge&logo=bookstack&logoColor=ffffff)](https://fh1m.github.io/work)
+[![Mongla](https://img.shields.io/badge/MONGLA-0d47a1?style=for-the-badge&logo=ros&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
+[![Repositories](https://img.shields.io/badge/24_REPOSITORIES-37474f?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m?tab=repositories)
+[![Engineering log](https://img.shields.io/badge/ENGINEERING_LOG-c62828?style=for-the-badge&logo=readthedocs&logoColor=ffffff)](https://fh1m.github.io/log)
+[![Current focus](https://img.shields.io/badge/CURRENT_FOCUS-1976d2?style=for-the-badge&logo=target&logoColor=ffffff)](https://fh1m.github.io/now)
 
 <sub>Portfolio = context · Work index = breadth · Mongla = deepest current system · Repositories = source · Log = chronology · Now = active direction</sub>
+
+<br clear="right">
 
 </div>
 
@@ -31,9 +35,9 @@ Perception, estimation, and control for machines that operate outside the screen
 
 <div align="center">
 
-[![SYSTEM MAP](https://img.shields.io/badge/SYSTEM_MAP-236b8e?style=for-the-badge&logo=mermaid&logoColor=ffffff)](#the-record)
-[![MEASURED SIGNALS](https://img.shields.io/badge/MEASURED_SIGNALS-8a6d3b?style=for-the-badge&logo=googleanalytics&logoColor=ffffff)](#measured-work)
-[![SOURCE](https://img.shields.io/badge/SOURCE-36454f?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
+[![SYSTEM MAP](https://img.shields.io/badge/SYSTEM_MAP-1976d2?style=for-the-badge&logo=mermaid&logoColor=ffffff)](#the-record)
+[![MEASURED SIGNALS](https://img.shields.io/badge/MEASURED_SIGNALS-e53935?style=for-the-badge&logo=googleanalytics&logoColor=ffffff)](#measured-work)
+[![SOURCE](https://img.shields.io/badge/SOURCE-37474f?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
 
 </div>
 
@@ -83,9 +87,9 @@ The recurring problem is not “which framework?” It is whether the measuremen
 
 <div align="center">
 
-[![TRACE THE STACK](https://img.shields.io/badge/TRACE_THE_STACK-236b8e?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
-[![READ THE TESTS](https://img.shields.io/badge/READ_THE_TESTS-3f7f6f?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/mongla_ws#testing)
-[![SEE THE EDGE PATH](https://img.shields.io/badge/SEE_THE_EDGE_PATH-8a6d3b?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/Dristy)
+[![TRACE THE STACK](https://img.shields.io/badge/TRACE_THE_STACK-1565c0?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
+[![READ THE TESTS](https://img.shields.io/badge/READ_THE_TESTS-e53935?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/mongla_ws#testing)
+[![SEE THE EDGE PATH](https://img.shields.io/badge/SEE_THE_EDGE_PATH-0d47a1?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/Dristy)
 
 </div>
 
@@ -95,10 +99,10 @@ The recurring problem is not “which framework?” It is whether the measuremen
 
 <sub>The surrounding work: research, competition systems, and engineering ownership.</sub>
 
-[![RESEARCH](https://img.shields.io/badge/RESEARCH-5c4b8a?style=for-the-badge&logo=readthedocs&logoColor=ffffff)](https://fh1m.github.io/about)
-[![FIELD LOG](https://img.shields.io/badge/FIELD_LOG-9a5b3f?style=for-the-badge&logo=target&logoColor=ffffff)](https://fh1m.github.io/log)
-[![COMPETITION WORK](https://img.shields.io/badge/COMPETITION_WORK-3f7f6f?style=for-the-badge&logo=trophy&logoColor=ffffff)](https://fh1m.github.io/work)
-[![CURRENT DIRECTION](https://img.shields.io/badge/CURRENT_DIRECTION-236b8e?style=for-the-badge&logo=compass&logoColor=ffffff)](https://fh1m.github.io/now)
+[![RESEARCH](https://img.shields.io/badge/RESEARCH-5e35b1?style=for-the-badge&logo=readthedocs&logoColor=ffffff)](https://fh1m.github.io/about)
+[![FIELD LOG](https://img.shields.io/badge/FIELD_LOG-c62828?style=for-the-badge&logo=target&logoColor=ffffff)](https://fh1m.github.io/log)
+[![COMPETITION WORK](https://img.shields.io/badge/COMPETITION_WORK-1565c0?style=for-the-badge&logo=trophy&logoColor=ffffff)](https://fh1m.github.io/work)
+[![CURRENT DIRECTION](https://img.shields.io/badge/CURRENT_DIRECTION-e53935?style=for-the-badge&logo=compass&logoColor=ffffff)](https://fh1m.github.io/now)
 
 Rockets and UAVs: TVC control, flight computers, trajectory prediction, VSLAM, and GPS-denied navigation.<br>
 Rovers: inverse kinematics, edge alignment, OCR, and competition data pipelines.<br>
@@ -116,16 +120,16 @@ Leadership: engineering ownership across vision, autonomy integration, reliabili
 
 <div align="center">
 
-[![ROS 2 + AUTONOMY](https://img.shields.io/badge/ROS_2_%2B_AUTONOMY-236b8e?style=for-the-badge&logo=ros&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
-[![EDGE VISION](https://img.shields.io/badge/EDGE_VISION-3f7f6f?style=for-the-badge&logo=opencv&logoColor=ffffff)](https://github.com/fh1m/Dristy)
-[![FLIGHT + SIMULATION](https://img.shields.io/badge/FLIGHT_%2B_SIMULATION-8a6d3b?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/duburi-sim_ws)
+[![ROS 2 + AUTONOMY](https://img.shields.io/badge/ROS_2_%2B_AUTONOMY-1565c0?style=for-the-badge&logo=ros&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
+[![EDGE VISION](https://img.shields.io/badge/EDGE_VISION-e53935?style=for-the-badge&logo=opencv&logoColor=ffffff)](https://github.com/fh1m/Dristy)
+[![FLIGHT + SIMULATION](https://img.shields.io/badge/FLIGHT_%2B_SIMULATION-0d47a1?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/duburi-sim_ws)
 
 </div>
 
 <div align="center">
 
-[![Full record](https://img.shields.io/badge/READ_THE_FULL_RECORD-236b8e?style=for-the-badge&logo=readthedocs&logoColor=ffffff)](https://fh1m.github.io/)
-[![About](https://img.shields.io/badge/ABOUT-3f7f6f?style=for-the-badge&logo=personio&logoColor=ffffff)](https://fh1m.github.io/about)
+[![Full record](https://img.shields.io/badge/READ_THE_FULL_RECORD-1565c0?style=for-the-badge&logo=readthedocs&logoColor=ffffff)](https://fh1m.github.io/)
+[![About](https://img.shields.io/badge/ABOUT-e53935?style=for-the-badge&logo=personio&logoColor=ffffff)](https://fh1m.github.io/about)
 [![Source repositories](https://img.shields.io/badge/SOURCE_REPOSITORIES-36454f?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m?tab=repositories)
 
 <sub>Start with the work index for breadth, Mongla for depth, and the repositories when the claim needs inspection.</sub>
