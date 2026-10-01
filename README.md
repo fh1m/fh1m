@@ -12,8 +12,6 @@ Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io)
 
 </div>
 
-<br/>
-
 <div align="center">
 
 <picture>
