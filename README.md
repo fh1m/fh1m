@@ -26,8 +26,8 @@ Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io) · *Proof of work,
 
 <br/><br/>
 
-**underwater** — state estimation, real-time vision, embedded control loops
-**ground** — inverse kinematics, edge vision, GPS-denied navigation
+**underwater** — state estimation, real-time vision, embedded control loops<br/>
+**ground** — inverse kinematics, edge vision, GPS-denied navigation<br/>
 **air** — guidance, navigation and control, flight software
 
 <picture>
