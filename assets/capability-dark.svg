@@ -1,0 +1,27 @@
+<svg width="760" height="150" viewBox="0 0 760 150" xmlns="http://www.w3.org/2000/svg" font-family="SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace">
+  <rect width="760" height="150" fill="#0d1117"/>
+  <text x="40" y="28" fill="#8b949e" font-size="12" letter-spacing="1">CAPABILITY MAP — MONGLA · 57 CLAIMED CAPABILITIES</text>
+
+  <rect x="40" y="42" width="358" height="26" fill="#2ea043"/>
+  <rect x="398" y="42" width="286" height="26" fill="#30363d"/>
+  <rect x="684" y="42" width="36" height="26" fill="#da3633"/>
+
+  <line x1="40" y1="42" x2="40" y2="68" stroke="#0d1117" stroke-width="1"/>
+  <line x1="398" y1="42" x2="398" y2="68" stroke="#0d1117" stroke-width="1"/>
+  <line x1="684" y1="42" x2="684" y2="68" stroke="#0d1117" stroke-width="1"/>
+  <line x1="720" y1="42" x2="720" y2="68" stroke="#0d1117" stroke-width="1"/>
+
+  <rect x="40" y="100" width="12" height="12" fill="#2ea043"/>
+  <text x="58" y="110" fill="#c9d1d9" font-size="13">bench-verified  30</text>
+
+  <rect x="240" y="100" width="12" height="12" fill="#30363d"/>
+  <text x="258" y="110" fill="#c9d1d9" font-size="13">built, untested  24</text>
+
+  <rect x="470" y="100" width="12" height="12" fill="#da3633"/>
+  <text x="488" y="110" fill="#c9d1d9" font-size="13">blocked  3</text>
+
+  <rect x="610" y="100" width="12" height="12" fill="none" stroke="#6e7681" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="628" y="110" fill="#6e7681" font-size="13">water-verified  0</text>
+
+  <text x="40" y="138" fill="#6e7681" font-size="11.5" font-style="italic">a number without its method is a rumour. the zero stays on the chart.</text>
+</svg>
