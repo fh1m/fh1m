@@ -1,6 +1,6 @@
 <div align="center">
 
-# Fahim Faisal
+# fh1m
 
 **Autonomy systems · robotics · embedded control**
 
@@ -29,9 +29,13 @@ Perception, estimation, and control for machines that operate outside the screen
 
 </div>
 
+<div align="center">
+
 [![SYSTEM MAP](https://img.shields.io/badge/SYSTEM_MAP-236b8e?style=for-the-badge&logo=mermaid&logoColor=ffffff)](#the-record)
 [![MEASURED SIGNALS](https://img.shields.io/badge/MEASURED_SIGNALS-8a6d3b?style=for-the-badge&logo=googleanalytics&logoColor=ffffff)](#measured-work)
 [![SOURCE](https://img.shields.io/badge/SOURCE-36454f?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/fh1m/mongla_ws)
+
+</div>
 
 ```mermaid
 flowchart LR
@@ -40,6 +44,13 @@ flowchart LR
     E --> C["control<br/>firmware · GNC"]
     C --> A["act<br/>ESC · gimbal · vehicle"]
     A -. feedback .-> S
+
+    subgraph PH["engineering philosophy"]
+        M["measure before claim"] --> H["hold uncertainty honestly"] --> L["let hardware have the final vote"]
+    end
+
+    E -. "discipline" .-> M
+    A -. "reality check" .-> L
 ```
 
 The recurring problem is not “which framework?” It is whether the measurement arrives in time, the estimate is honest, and the actuator does what the model asked.
