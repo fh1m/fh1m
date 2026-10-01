@@ -57,7 +57,25 @@ I like open source, because knowledge should compound.
   <img src="assets/rule-light.svg" width="100%" alt="">
 </picture>
 
+**Latest from the notebook:** *[The 71 transposes that were one operation](https://fh1m.github.io/writing)* — how a feature matcher that refused to compile for a neural accelerator turned out to be one idea wearing 71 masks.
+
+**On the desk:** *The Creative Act* (Rick Rubin) · tinygrad internals (geohot) · papers on right-invariant EKFs
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/rule-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/rule-light.svg">
+  <img src="assets/rule-light.svg" width="100%" alt="">
+</picture>
+
 Python · C · ROS 2 · MAVLink · Hailo-8 · ESP32 / RISC-V · EKF · VSLAM · PyQt6
+
+<br/>
+
+<div align="center">
+
+*let's build something that has to work.*
+
+</div>
 
 <br/>
 
