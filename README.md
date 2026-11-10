@@ -13,6 +13,16 @@ Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io)
 
 </div>
 
+### On the bench
+
+| Project | My role | Demonstrated result | Validation |
+|---|---|---|---|
+| [Mongla](https://github.com/fh1m/mongla_ws) | Autonomy-stack maintainer | ROS Humble/Jazzy CI passing; board and Hailo bench evidence linked in the capability map | Bench/software evidence. The current vehicle has never been in water. |
+| [Rupsha](https://github.com/fh1m/rupsha_ws) | Author, rover autonomy stack | Simulation and board-contract work; earlier skid/Pixhawk results kept separate | Current Ackermann chassis has no outdoor validation. CI presently needs repair. |
+| [Dristy](https://github.com/fh1m/Dristy) | Firmware and host-API co-author | K210/SEN0305 live-board captures and mode-audit records | Hardware-bench evidence; development paused. |
+| [Digital Den](https://github.com/fh1m/.dotfiles) | Workstation maintainer | A documented two-host workbench with cross-host validation receipts | Daily-use/host evidence; clean-runner CI presently needs repair. |
+
+
 <div align="center">
 
 <picture>
