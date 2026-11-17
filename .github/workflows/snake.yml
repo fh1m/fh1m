@@ -22,6 +22,16 @@ jobs:
             dist/snake-dark.svg?palette=github-dark
             dist/snake-light.svg?palette=github-light
 
+      # the ledger: my latest real commits, rebuilt with the snake so it never goes stale
+      - uses: actions/checkout@v4
+        with:
+          path: src
+      - name: generate ledger
+        working-directory: src
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/ledger.mjs && cp dist/ledger-*.svg ../dist/
+
       - uses: crazy-max/ghaction-github-pages@df5cc2bfa78282ded844b354faee141f06b41865 # v4
         with:
           target_branch: output

@@ -24,49 +24,31 @@ Dhaka, Bangladesh · [fh1m.github.io](https://fh1m.github.io)
 
 <br/>
 
-My training runs backwards from most engineers I know. I didn't start on the ground and work my way out  I started with the thing that has to leave the ground, where a mistake is instantly visible and instantly expensive. Then I came down to things that walk. Then I went under things that swim, which turned out to be the hardest teacher of the three, because water doesn't argue with you and it doesn't wait for a patch. It just stops returning what you expected and leaves you to work out, alone, whether the sensor lied or the world changed.
+I learned in the wrong order: first the thing that leaves the ground, where a mistake is instant and expensive, then things that drive, then things that swim. Water was the hardest teacher. It never argues and never waits for a patch; it just stops returning what you expected, and you work out alone whether the sensor lied or the world changed.
 
-That's the actual job, underneath the ROS nodes and the control loops: deciding what a machine is allowed to believe about a world it can't fully see, and building the discipline into the code so the machine never believes more than it has earned.
-
-<br/>
+### Receipts
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/rule-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/rule-light.svg">
-  <img src="assets/rule-light.svg" width="100%" alt="">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/fh1m/fh1m/output/ledger-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/fh1m/fh1m/output/ledger-light.svg">
+  <img src="https://raw.githubusercontent.com/fh1m/fh1m/output/ledger-dark.svg" alt="My latest commits across public repositories, rebuilt daily" width="100%">
 </picture>
+
+| | |
+|---|---|
+| **BRACU Duburi** | Engineering Team Lead for RoboSub 2026; vision before that. 8th of 58 at RoboSub in 2025 and 2026. Co-author of both Technical Design Reports. |
+| **[Mongla](https://github.com/fh1m/mongla_ws)** | An autonomy stack for underwater vehicles where every number carries the measurement that produced it. |
+| **[Dristy](https://github.com/fh1m/Dristy)** | Open firmware that makes a K210 camera do the seeing, so the robot gets an answer instead of a picture. |
+| **[SROT / Hengla](https://github.com/RakibulIslam1/srot-control-board)** | Contributor to Rakibul Islam's AUV control board and firmware, and its ground station, Bondor. |
+| **[Everything else](https://fh1m.github.io/everything)** | Rockets, rovers, a camera that grades its own interviews, and the lessons each one cost. |
 
 ### a few things I hold as load-bearing
 
-* A system I didn't build, I don't extend blind — I take it apart until I can explain every piece back in my own words, and only then do I trust it with something that matters.
+* A system I didn't build, I don't extend blind. I take it apart until I can explain every piece back in my own words.
+* A claim without a method attached is a rumor wearing a lab coat.
+* Hardware doesn't negotiate. You can argue with a product manager; you cannot argue with a thruster that draws more current than the ESC can source.
 
-* A claim without a method attached isn't a fact yet. It's a rumor wearing a lab coat, and I treat it that way until it earns better.
-
-* Working once, under ideal conditions, in a demo, isn't engineering. It's a coin flip with good lighting. The version that counts is the one that still works on the night nobody's filming.
-
-* Hardware doesn't negotiate. You can argue with a product manager; you cannot argue with a thruster that draws more current than the ESC can source. I like that. It's the most honest collaborator I've worked with.
-
-<br/>
-
-  > A heartbeat message tells you the wire is fine. It has never once told you the propeller is still attached to the shaft.
-
-<br/>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/rule-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/rule-light.svg">
-  <img src="assets/rule-light.svg" width="100%" alt="">
-</picture>
-
-<br/>
-<br/>
-
-
-<div align="center">
-
-*Ship the version that's honest. Make it fast after. then better. the loop*
-
-</div>
+> A heartbeat message tells you the wire is fine. It has never once told you the propeller is still attached to the shaft.
 
 <br/>
 
