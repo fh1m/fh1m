@@ -30,7 +30,7 @@ jobs:
         working-directory: src
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/ledger.mjs && cp dist/ledger-*.svg ../dist/
+        run: node scripts/ledger.mjs && sudo cp dist/ledger-*.svg ../dist/  # the snake action writes dist as root
 
       - uses: crazy-max/ghaction-github-pages@df5cc2bfa78282ded844b354faee141f06b41865 # v4
         with:
