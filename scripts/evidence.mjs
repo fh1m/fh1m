@@ -59,7 +59,7 @@ async function inspectRepo(project) {
     try {
       const report = await github(`${root}/actions/workflows/${workflow}/runs`, { branch: repo.default_branch, per_page: 8 });
       const run = (report.workflow_runs ?? []).find(r => r.event === "push" && r.status === "completed");
-      return run ? { workflow, status: run.conclusion ?? "unknown", date: run.updated_at?.slice(0, 10) ?? "unknown" } : null;
+      return run ? { workflow, status: run.conclusion ?? "unknown", date: run.updated_at?.slice(0, 10) ?? "unknown", url: run.html_url ?? null } : null;
     } catch (error) {
       console.warn(`Could not read ${project.name} / ${workflow}: ${error.message}`);
       return null;
@@ -110,7 +110,7 @@ function build(theme) {
     const repo = item.repository_url?.split("/").slice(-1)[0] ?? item.html_url?.split("/")[4] ?? "repository";
     const date = item.pull_request.merged_at.slice(0, 10);
     result.push(label(24, y, `${repo}  /  ${date}  /  PR #${item.number}`, c.quiet, 11));
-    result.push(label(24, y + 20, clip(item.title, 103), c.fg, 13));
+    result.push(label(24, y + 20, clip(item.title, 98), c.fg, 13));
   }
   result.push(section(356), label(24, 383, "test surfaces / source files and automated checks", c.amber, 12));
   for (let i = 0; i < repos.length; i++) {
@@ -129,6 +129,53 @@ function build(theme) {
   );
   return result.join("\n");
 }
+// The long-form index lives on the generated output branch; main never needs daily bot commits.
+const mdSafe = (s) => String(s ?? "").replace(/([\\[\]])/g, "\\$1");
+const report = [
+  "# The public trail",
+  "",
+  "Code, test sources and check runs. All links lead back to GitHub. These are records of work, not evidence of performance in the water.",
+  "",
+  `Updated ${today.toISOString().slice(0, 10)} (UTC) · rolling ${WINDOW_DAYS}-day window`,
+  "",
+  "## The window",
+  "",
+  `- ${commitPage.total_count ?? commits.length} public commits (including profile maintenance)`,
+  `- ${activeRepos} repositories with authored commits`,
+  `- ${activeDays} dates with authored commits`,
+  `- ${totalMerged} merged pull requests authored by ${USER}`,
+  "",
+  "## Recently merged",
+  "",
+];
+if (!merged.length) report.push("No merged public pull requests were found in the window.");
+for (const item of merged.slice(0, 8)) {
+  const date = item.pull_request.merged_at.slice(0, 10);
+  const hasMethod = /^##\s+(?:Verified|Testing|Tests|Validation|How (?:I )?tested|Test plan)\b/im.test(item.body ?? "");
+  report.push(`- [${mdSafe(item.title)}](${item.html_url}) — ${date}${hasMethod ? " · method/verification notes in PR body" : ""}`);
+}
+report.push("", "## Test sources and checks", "");
+for (const r of repos) {
+  const root = `https://github.com/${r.name}`;
+  const source = r.firstTest ? `${root}/blob/${r.branch}/${r.firstTest.split("/").map(encodeURIComponent).join("/")}` : `${root}/tree/${r.branch}`;
+  report.push(`### [${r.label}](${root})`, "");
+  report.push(`- ${r.tests === null ? "Source tree truncated: file count unavailable" : `${r.tests} test-source files detected on ${r.branch}`} — [inspect an example](${source})`);
+  report.push(`- Latest repository push: ${r.pushed}`);
+  if (r.checks.length) {
+    for (const run of r.checks) report.push(`- ${run.workflow}: **${run.status}** (${run.date})${run.url ? ` — [run log](${run.url})` : ""}`);
+  } else {
+    report.push("- No CI result displayed for this repository; this is not a test result.");
+  }
+  report.push("");
+}
+report.push(
+  "## Method",
+  "",
+  "Commits: GitHub's public commit search for the author's date window. PRs: GitHub's merged PR search (self-merges count; this is not a claim of peer review). Test-source files: a conservative path/name filter over the default-branch Git tree; these are files, not passing test cases. CI: the latest completed default-branch push runs from named workflows; success is not a hardware validation claim.",
+  ""
+);
+mkdirSync("dist", { recursive: true });
+writeFileSync("dist/evidence.md", report.join("\n"));
 mkdirSync("dist", { recursive: true });
 for (const theme of ["dark", "light"]) writeFileSync(`dist/evidence-${theme}.svg`, build(theme));
 console.log(`Evidence: ${totalMerged} merged PRs, ${activeRepos} repos, ${activeDays} active days; test files: ${repos.map(r => r.tests).join(", ")}`);
