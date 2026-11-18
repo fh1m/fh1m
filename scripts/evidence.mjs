@@ -170,9 +170,9 @@ const report = [
   "",
   "Code, test sources and check runs. All links lead back to GitHub. These are records of work, not evidence of performance in the water.",
   "",
-  `Updated ${today.toISOString().slice(0, 10)} (UTC) · rolling ${WINDOW_DAYS}-day window`,
+  `Updated ${today.toISOString().slice(0, 10)} (UTC) · lifetime source inventory and recent receipts`,
   "",
-  "## The window",
+  "## Recent activity (30 days)",
   "",
   `- ${commitPage.total_count ?? commits.length} public commits (including profile maintenance)`,
   `- ${activeRepos} non-profile repositories with authored commits`,
@@ -214,7 +214,7 @@ for(const item of inventory){
   accountReport.push(`| [${r.name}](${r.html_url})${archived} | ${(r.created_at??"—").slice(0,10)} | ${(r.pushed_at??"—").slice(0,10)} | ${(r.language??"—").replace(/\|/g,"/")} | ${item.tests??"unknown"} | ${item.workflows??"unknown"} |`);
 }
 accountReport.push("");
-report.splice(report.indexOf("## Recently merged"),0,...accountReport);
+report.splice(report.indexOf("## The window"),0,...accountReport);
 
 report.push("", "## Test sources and checks", "");
 for (const r of repos) {
