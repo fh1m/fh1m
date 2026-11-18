@@ -46,13 +46,31 @@ I learned in the wrong order: first the thing that leaves the ground, where a mi
 
 <p align="center">&nbsp;</p>
 
-| | |
-|---|---|
-| **BRACU Duburi** | Engineering Team Lead for RoboSub 2026; vision before that. 8th of 58 at RoboSub in 2025 and 2026. Co-author of both Technical Design Reports. |
-| **[Mongla](https://github.com/fh1m/mongla_ws)** | An autonomy stack for underwater vehicles where every number carries the measurement that produced it. |
-| **[Dristy](https://github.com/fh1m/Dristy)** | Open firmware that makes a K210 camera do the seeing, so the robot gets an answer instead of a picture. |
-| **[SROT / Hengla](https://github.com/RakibulIslam1/srot-control-board)** | Contributor to Rakibul Islam's AUV control board and firmware, and its ground station, Bondor. |
-| **[Everything else](https://fh1m.github.io/everything)** | Rockets, rovers, a camera that grades its own interviews, and the lessons each one cost. |
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>BRACU Duburi</strong></td>
+      <td>Engineering Team Lead for RoboSub 2026; vision before that. 8th of 58 at RoboSub in 2025 and 2026. Co-author of both Technical Design Reports.</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://github.com/fh1m/mongla_ws">Mongla</a></strong></td>
+      <td>An autonomy stack for underwater vehicles where every number carries the measurement that produced it.</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://github.com/fh1m/Dristy">Dristy</a></strong></td>
+      <td>Open firmware that makes a K210 camera do the seeing, so the robot gets an answer instead of a picture.</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://github.com/RakibulIslam1/srot-control-board">SROT / Hengla</a></strong></td>
+      <td>Contributor to Rakibul Islam's AUV control board and firmware, and its ground station, Bondor.</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://fh1m.github.io/everything">Everything else</a></strong></td>
+      <td>Rockets, rovers, a camera that grades its own interviews, and the lessons each one cost.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### a few things I hold as load-bearing
 
