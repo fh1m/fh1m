@@ -92,49 +92,44 @@ const colors = {
   light: { bg: "#ffffff", border: "#d0d7de", rule: "#d8dee4", fg: "#1f2328", quiet: "#656d76", blue: "#0969da", amber: "#9a6700", good: "#1a7f37", bad: "#cf222e" },
 };
 function build(theme) {
-  const c = colors[theme], W = 860, H = 548;
-  const label = (x, y, value, color = c.quiet, size = 12, weight = 400) =>
-    `<text x="${x}" y="${y}" fill="${color}" font-size="${size}" font-weight="${weight}">${escapeXml(value)}</text>`;
-  const section = y => `<line x1="24" y1="${y}" x2="836" y2="${y}" stroke="${c.rule}" />`;
-  let result = [
-    `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Recent merged pull requests, test source files and CI results from GitHub" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">`,
-    `<rect x="0.5" y="0.5" width="859" height="547" rx="8" fill="${c.bg}" stroke="${c.border}"/>`,
-    label(24, 33, "$ evidence --from-the-source", c.blue, 14),
-    label(24, 56, "A diff can be read. A test can be rerun. Neither replaces a field trial."),
-    label(24, 89, "MERGED PRS / 30D", c.quiet, 11),
-    label(24, 121, totalMerged.toLocaleString("en-US"), c.fg, 28),
-    label(304, 89, "CODEBASES TOUCHED / 30D", c.quiet, 11),
-    label(304, 121, activeRepos.toLocaleString("en-US"), c.fg, 28),
-    label(620, 89, "DAYS WITH COMMITS / 30D", c.quiet, 11),
-    label(620, 121, activeDays.toLocaleString("en-US"), c.fg, 28),
-    section(140),
-    label(24, 166, "recently merged / follow the change", c.amber, 12),
+  // One restrained frame: the overall body of work, and just enough verification
+  // to earn a closer look. The full source-linked index remains one click away.
+  const c = colors[theme];
+  const W = 860, H = 244;
+  const text = (x, y, value, fill = c.quiet, size = 12, weight = 400) =>
+    `<text x="${x}" y="${y}" fill="${fill}" font-size="${size}" font-weight="${weight}">${escapeXml(value)}</text>`;
+  const stroke = (y) =>
+    `<path d="M24 ${y}H836" stroke="${c.rule}" stroke-width="1" />`;
+  const checks = (repo) => {
+    const ros = repo.checks.find(x => x.workflow === "ros.yml");
+    const integrity = repo.checks.find(x => x.workflow === "repository-integrity.yml");
+    const states = [];
+    if (ros) states.push(`ROS / Humble + Jazzy: ${ros.status === "success" ? "pass" : ros.status}`);
+    if (integrity) states.push(`integrity: ${integrity.status === "success" ? "pass" : integrity.status}`);
+    return states.join(" · ");
+  };
+  const elements = [
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Public engineering changes and test sources; select to inspect the evidence" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">`,
+    `<rect x="0.5" y="0.5" width="859" height="243" rx="7" fill="${c.bg}" stroke="${c.border}" />`,
+    text(24, 34, "WORK / LAST 30 DAYS", c.quiet, 11),
+    text(670, 34, `updated ${today.toISOString().slice(0, 10)}`, c.quiet, 11),
+    text(24, 100, totalMerged.toLocaleString("en-US"), c.fg, 34),
+    text(112, 96, "merged changes", c.quiet, 13),
+    text(445, 100, activeRepos.toLocaleString("en-US"), c.fg, 34),
+    text(515, 96, "codebases touched", c.quiet, 13),
+    stroke(124),
   ];
-  const recent = merged.slice(0, 3);
-  for (let i = 0; i < 3; i++) {
-    const item = recent[i], y = 197 + i * 57;
-    if (!item) { if (i === 0) result.push(label(24, y, "No merged public pull requests in this window.")); break; }
-    const repo = item.repository_url?.split("/").slice(-1)[0] ?? item.html_url?.split("/")[4] ?? "repository";
-    const date = item.pull_request.merged_at.slice(0, 10);
-    result.push(label(24, y, `${repo}  /  ${date}  /  PR #${item.number}`, c.quiet, 11));
-    result.push(label(24, y + 20, clip(item.title, 98), c.fg, 13));
+  for (const [i, repo] of repos.entries()) {
+    const y = 159 + i * 38;
+    elements.push(text(24, y, repo.label, c.blue, 13, 600));
+    elements.push(text(195, y, repo.tests === null ? "test sources unavailable" : `${repo.tests} test-source files`, c.fg, 12));
+    const status = checks(repo);
+    if (status) elements.push(text(439, y, clip(status, 56), c.quiet, 11));
   }
-  result.push(section(356), label(24, 383, "test surfaces / source files and automated checks", c.amber, 12));
-  for (let i = 0; i < repos.length; i++) {
-    const r = repos[i], y = 415 + i * 47;
-    result.push(label(24, y, r.label, c.blue, 13, 600));
-    result.push(label(185, y, r.tests === null ? "test files: unavailable (tree truncated)" : `${r.tests} test-source files on ${r.branch}`, c.fg, 12));
-    const checkText = r.checks.length
-      ? r.checks.map(x => `${x.workflow === "ros.yml" ? "ROS / Humble + Jazzy" : "integrity"}: ${x.status} (${x.date})`).join(" · ")
-      : "no published CI result in this panel";
-    result.push(label(185, y + 20, clip(checkText, 84), r.checks.some(x => x.status === "failure") ? c.bad : c.quiet, 11));
-  }
-  result.push(
-    section(520),
-    label(24, 539, `Public GitHub data · updated ${today.toISOString().slice(0, 10)} UTC · see links below for the underlying code and runs`, c.quiet, 10),
-    "</svg>"
-  );
-  return result.join("\n");
+  elements.push(stroke(215));
+  elements.push(text(24, 233, "Source files, not passing test cases.  ·  Click to inspect the records.", c.quiet, 10));
+  elements.push("</svg>");
+  return elements.join("\n");
 }
 // The long-form index lives on the generated output branch; main never needs daily bot commits.
 const mdSafe = (s) => String(s ?? "").replace(/([\\[\]])/g, "\\$1");
