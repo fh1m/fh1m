@@ -34,6 +34,20 @@ I learned in the wrong order: first the thing that leaves the ground, where a mi
   <img src="https://raw.githubusercontent.com/fh1m/fh1m/output/ledger-dark.svg" alt="My latest commits across public repositories, rebuilt daily" width="100%">
 </picture>
 
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/fh1m/fh1m/output/evidence-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/fh1m/fh1m/output/evidence-light.svg">
+  <img src="https://raw.githubusercontent.com/fh1m/fh1m/output/evidence-dark.svg" alt="Daily GitHub evidence: merged engineering changes, active codebases, test source files and CI check results" width="100%">
+</picture>
+
+<sub>
+The number of commits tells you I was there. The [merged changes](https://github.com/pulls?q=is%3Apr+author%3Afh1m+is%3Amerged), [test sources](https://github.com/fh1m/mongla_ws/tree/main/src/mongla_control/test), and [build logs](https://github.com/fh1m/mongla_ws/actions) tell you what survived inspection.
+</sub>
+
+<br/>
+
 | | |
 |---|---|
 | **BRACU Duburi** | Engineering Team Lead for RoboSub 2026; vision before that. 8th of 58 at RoboSub in 2025 and 2026. Co-author of both Technical Design Reports. |
