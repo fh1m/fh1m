@@ -83,6 +83,47 @@ async function inspectRepo(project) {
 }
 const repos = await Promise.all(pinned.map(inspectRepo));
 
+// Public history, not a rolling activity score. GitHub repo search includes archive work.
+const page1 = await github("/search/repositories", { q: `user:${USER} fork:false`, sort: "created", order: "asc", page: 1, per_page: 100 });
+const repoPages = Math.min(10, Math.ceil((page1.total_count ?? 0) / 100));
+const pages = await Promise.all(Array.from({length: Math.max(0,repoPages-1)}, (_,i) =>
+  github("/search/repositories", {q: `user:${USER} fork:false`, sort: "created", order: "asc", page: i+2, per_page: 100})));
+const originals = [page1,...pages].flatMap(p=>p.items??[])
+  .filter(r => !r.fork && r.owner?.login?.toLowerCase() === USER && r.name !== USER)
+  .sort((a,b)=>(a.created_at??"").localeCompare(b.created_at??""));
+const firstYear = originals[0]?.created_at?.slice(0,4) ?? "—";
+async function inspectSourceTree(repo) {
+  try {
+    const tree = await github(`/repos/${USER}/${encodeURIComponent(repo.name)}/git/trees/${encodeURIComponent(repo.default_branch)}`, {recursive: 1});
+    if (tree.truncated) return {repo, tests: null, workflows: null};
+    const paths = (tree.tree??[]).filter(f=>f.type==="blob").map(f=>f.path);
+    return {repo, tests: paths.filter(isTestSource).length,
+      workflows: paths.filter(p=>/^\.github\/workflows\/[^/]+\.ya?ml$/i.test(p)).length};
+  } catch(error) {
+    console.warn(`Cannot inspect tree of ${repo.name}: ${error.message}`);
+    return {repo, tests: null, workflows: null};
+  }
+}
+const inventory=[];
+for(let i=0;i<originals.length;i+=5) inventory.push(...await Promise.all(originals.slice(i,i+5).map(inspectSourceTree)));
+const unknownTrees=inventory.filter(r=>r.tests===null).length;
+const testRepoCount=inventory.filter(r=>(r.tests??0)>0).length;
+const workflowRepoCount=inventory.filter(r=>(r.workflows??0)>0).length;
+const count=n=>`${n}${unknownTrees?"+":""}`;
+const threads=[
+  {label:"WATER",title:"mongla_ws",repos:["mongla_ws"],
+    summary:"Underwater autonomy, localization, control and ROS 2"},
+  {label:"PERCEPTION",title:"Dristy",repos:["Dristy"],
+    summary:"K210 camera firmware and host-side vision tools"},
+  {label:"GROUND",title:"rupsha_ws",repos:["rupsha_ws"],
+    summary:"Ackermann rover autonomy, still taking shape"},
+  {label:"EXPERIMENTS",title:"pareidolia / half-a-second",repos:["pareidolia","half-a-second"],
+    summary:"What detectors see; what a tracker can predict"},
+  {label:"SYSTEMS",title:".dotfiles / secure-terminal",repos:[".dotfiles","secure-terminal-p2p-chat"],
+    summary:"Linux environments and secure terminal protocols"}
+];
+
+
 const escapeXml = (s) => String(s ?? "")
   .replace(/&/g, "&amp;").replace(/</g, "&lt;")
   .replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
@@ -92,44 +133,35 @@ const colors = {
   light: { bg: "#ffffff", border: "#d0d7de", rule: "#d8dee4", fg: "#1f2328", quiet: "#656d76", blue: "#0969da", amber: "#9a6700", good: "#1a7f37", bad: "#cf222e" },
 };
 function build(theme) {
-  // One restrained frame: the overall body of work, and just enough verification
-  // to earn a closer look. The full source-linked index remains one click away.
-  const c = colors[theme];
-  const W = 860, H = 244;
-  const text = (x, y, value, fill = c.quiet, size = 12, weight = 400) =>
+  const c=colors[theme], W=860, H=506;
+  const t=(x,y,value,fill=c.quiet,size=12,weight=400)=>
     `<text x="${x}" y="${y}" fill="${fill}" font-size="${size}" font-weight="${weight}">${escapeXml(value)}</text>`;
-  const stroke = (y) =>
-    `<path d="M24 ${y}H836" stroke="${c.rule}" stroke-width="1" />`;
-  const checks = (repo) => {
-    const ros = repo.checks.find(x => x.workflow === "ros.yml");
-    const integrity = repo.checks.find(x => x.workflow === "repository-integrity.yml");
-    const states = [];
-    if (ros) states.push(`ROS / Humble + Jazzy: ${ros.status === "success" ? "pass" : ros.status}`);
-    if (integrity) states.push(`integrity: ${integrity.status === "success" ? "pass" : integrity.status}`);
-    return states.join(" · ");
-  };
-  const elements = [
-    `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Public engineering changes and test sources; select to inspect the evidence" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">`,
-    `<rect x="0.5" y="0.5" width="859" height="243" rx="7" fill="${c.bg}" stroke="${c.border}" />`,
-    text(24, 34, "WORK / LAST 30 DAYS", c.quiet, 11),
-    text(670, 34, `updated ${today.toISOString().slice(0, 10)}`, c.quiet, 11),
-    text(24, 100, totalMerged.toLocaleString("en-US"), c.fg, 34),
-    text(112, 96, "merged changes", c.quiet, 13),
-    text(445, 100, activeRepos.toLocaleString("en-US"), c.fg, 34),
-    text(515, 96, "codebases touched", c.quiet, 13),
-    stroke(124),
+  const line=y=>`<path d="M26 ${y} H834" stroke="${c.rule}" stroke-width="1"/>`;
+  const parts=[
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Engineering record: public projects, test-bearing projects, automated workflows and five engineering disciplines" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">`,
+    `<rect x=".5" y=".5" width="859" height="505" rx="7" fill="${c.bg}" stroke="${c.border}"/>`,
+    t(26,31,"A PUBLIC RECORD",c.blue,13,600),
+    t(664,31,`${firstYear} — ${today.getUTCFullYear()}`),
+    t(26,60,"The systems, experiments, and tools behind the commit graph."),
+    t(26,108,String(originals.length),c.fg,30),
+    t(101,106,"original repos"),
+    t(305,108,count(testRepoCount),c.fg,30),
+    t(380,106,"with test sources"),
+    t(604,108,count(workflowRepoCount),c.fg,30),
+    t(680,106,"with workflows"),
+    line(129)
   ];
-  for (const [i, repo] of repos.entries()) {
-    const y = 159 + i * 38;
-    elements.push(text(24, y, repo.label, c.blue, 13, 600));
-    elements.push(text(195, y, repo.tests === null ? "test sources unavailable" : `${repo.tests} test-source files`, c.fg, 12));
-    const status = checks(repo);
-    if (status) elements.push(text(439, y, clip(status, 56), c.quiet, 11));
+  for(const [i,thread] of threads.entries()){
+    const y=168+i*61;
+    parts.push(t(26,y,thread.label,c.quiet,11,600));
+    parts.push(t(185,y,thread.title,c.blue,14,600));
+    parts.push(t(185,y+21,thread.summary,c.fg,12));
+    if(i!==threads.length-1)parts.push(line(y+39));
   }
-  elements.push(stroke(215));
-  elements.push(text(24, 233, "Source files, not passing test cases.  ·  Click to inspect the records.", c.quiet, 10));
-  elements.push("</svg>");
-  return elements.join("\n");
+  parts.push(line(475));
+  parts.push(t(26,495,"Public source, not a claim of field performance.  ·  Open the full repository atlas.",c.quiet,10));
+  parts.push("</svg>");
+  return parts.join("\n");
 }
 // The long-form index lives on the generated output branch; main never needs daily bot commits.
 const mdSafe = (s) => String(s ?? "").replace(/([\\[\]])/g, "\\$1");
@@ -138,9 +170,9 @@ const report = [
   "",
   "Code, test sources and check runs. All links lead back to GitHub. These are records of work, not evidence of performance in the water.",
   "",
-  `Updated ${today.toISOString().slice(0, 10)} (UTC) · rolling ${WINDOW_DAYS}-day window`,
+  `Updated ${today.toISOString().slice(0, 10)} (UTC) · lifetime source inventory and recent receipts`,
   "",
-  "## The window",
+  "## Recent activity (30 days)",
   "",
   `- ${commitPage.total_count ?? commits.length} public commits (including profile maintenance)`,
   `- ${activeRepos} non-profile repositories with authored commits`,
@@ -156,6 +188,34 @@ for (const item of merged.slice(0, 8)) {
   const hasMethod = /^##\s+(?:Verified|Testing|Tests|Validation|How (?:I )?tested|Test plan)\b/im.test(item.body ?? "");
   report.push(`- [${mdSafe(item.title)}](${item.html_url}) — ${date}${hasMethod ? " · method/verification notes in PR body" : ""}`);
 }
+const accountReport=[
+  "## Across the whole account",
+  "",
+  `Public original repositories, ${firstYear}–${today.getUTCFullYear()}; archived history included, forks and the profile repository excluded.`,
+  "",
+  `- **${originals.length}** original public repositories`,
+  `- **${count(testRepoCount)}** repositories containing test sources`,
+  `- **${count(workflowRepoCount)}** repositories containing GitHub Actions workflows`,
+  `- **${unknownTrees}** truncated or unavailable source trees (if nonzero, the figures above are lower bounds)`,
+  "",
+  "## Engineering threads",
+  ""
+];
+for(const th of threads)accountReport.push(`- **${th.label}** — ${th.repos.map(n=>`[${n}](https://github.com/${USER}/${n})`).join(" · ")}: ${th.summary}`);
+accountReport.push(
+  "",
+  "## Complete repository atlas",
+  "",
+  "| Repository | Created | Last push | Primary language | Test sources | Workflows |",
+  "|---|---|---|---|---:|---:|"
+);
+for(const item of inventory){
+  const r=item.repo, archived=r.archived?" *(archived)*":"";
+  accountReport.push(`| [${r.name}](${r.html_url})${archived} | ${(r.created_at??"—").slice(0,10)} | ${(r.pushed_at??"—").slice(0,10)} | ${(r.language??"—").replace(/\|/g,"/")} | ${item.tests??"unknown"} | ${item.workflows??"unknown"} |`);
+}
+accountReport.push("");
+report.splice(report.indexOf("## The window"),0,...accountReport);
+
 report.push("", "## Test sources and checks", "");
 for (const r of repos) {
   const root = `https://github.com/${r.name}`;
@@ -173,7 +233,7 @@ for (const r of repos) {
 report.push(
   "## Method",
   "",
-  "Commits: GitHub's public commit search for the author's date window. PRs: GitHub's merged PR search (self-merges count; this is not a claim of peer review). Test-source files: a conservative path/name filter over the default-branch Git tree, including test harnesses; these are files, not passing test cases. CI: the latest completed default-branch push runs from named workflows; success is not a hardware validation claim.",
+  "Account atlas: GitHub public original-repository search, archived included, profile and forks omitted. Test files are heuristic source-path matches, not passing tests. Workflow counts mean YAML definitions, not CI successes. Unknown/truncated trees are shown explicitly. Recent receipts: rolling 30-day commit search and merged PRs (including self-merges, not necessarily peer reviewed). Named checks show default-branch push runs, not hardware validation.",
   ""
 );
 mkdirSync("dist", { recursive: true });
