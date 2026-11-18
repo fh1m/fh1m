@@ -57,7 +57,7 @@ async function inspectRepo(project) {
   const testFiles = tree.truncated ? null : (tree.tree ?? []).filter(item => item.type === "blob" && isTestSource(item.path));
   const checks = await Promise.all(project.workflows.map(async (workflow) => {
     try {
-      const report = await github(`${root}/actions/workflows/${workflow}/runs`, { branch: repo.default_branch, per_page: 8 });
+      const report = await github(`${root}/actions/workflows/${workflow}/runs`, { branch: repo.default_branch, event: "push", per_page: 8 });
       const run = (report.workflow_runs ?? []).find(r => r.event === "push" && r.status === "completed");
       return run ? { workflow, status: run.conclusion ?? "unknown", date: run.updated_at?.slice(0, 10) ?? "unknown", url: run.html_url ?? null } : null;
     } catch (error) {
@@ -142,8 +142,8 @@ const report = [
   "",
   `- ${commitPage.total_count ?? commits.length} public commits (including profile maintenance)`,
   `- ${activeRepos} repositories with authored commits`,
-  `- ${activeDays} dates with authored commits`,
-  `- ${totalMerged} merged pull requests authored by ${USER}`,
+  `- ${activeDays} ${activeDays === 1 ? "date" : "dates"} with authored commits`,
+  `- ${totalMerged} merged pull ${totalMerged === 1 ? "request" : "requests"} authored by ${USER}`,
   "",
   "## Recently merged",
   "",
@@ -159,7 +159,7 @@ for (const r of repos) {
   const root = `https://github.com/${r.name}`;
   const source = r.firstTest ? `${root}/blob/${r.branch}/${r.firstTest.split("/").map(encodeURIComponent).join("/")}` : `${root}/tree/${r.branch}`;
   report.push(`### [${r.label}](${root})`, "");
-  report.push(`- ${r.tests === null ? "Source tree truncated: file count unavailable" : `${r.tests} test-source files detected on ${r.branch}`} — [inspect an example](${source})`);
+  report.push(`- ${r.tests === null ? "Source tree truncated: file count unavailable" : `${r.tests} test-source ${r.tests === 1 ? "file" : "files"} detected on ${r.branch}`} — [inspect an example](${source})`);
   report.push(`- Latest repository push: ${r.pushed}`);
   if (r.checks.length) {
     for (const run of r.checks) report.push(`- ${run.workflow}: **${run.status}** (${run.date})${run.url ? ` — [run log](${run.url})` : ""}`);
