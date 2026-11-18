@@ -43,7 +43,7 @@ I learned in the wrong order: first the thing that leaves the ground, where a mi
 </picture>
 
 <sub>
-The number of commits tells you I was there. The [merged changes](https://github.com/pulls?q=is%3Apr+author%3Afh1m+is%3Amerged), [test sources](https://github.com/fh1m/mongla_ws/tree/main/src/mongla_control/test), and [build logs](https://github.com/fh1m/mongla_ws/actions) tell you what survived inspection.
+The number of commits tells you I was there. The [merged changes and their diffs](https://github.com/fh1m/fh1m/blob/output/evidence.md), [test sources](https://github.com/fh1m/mongla_ws/tree/main/src/mongla_control/test), and [build logs](https://github.com/fh1m/mongla_ws/actions) tell you what survived inspection.
 </sub>
 
 <br/>
