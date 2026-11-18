@@ -31,15 +31,22 @@ const others = await Promise.all(Array.from({ length: Math.max(0, extraPages) },
   github("/search/commits", { q: commitQuery, per_page: 100, page: i + 2, sort: "author-date", order: "desc" })
 ));
 const commits = [commitPage, ...others].flatMap(page => page.items ?? []);
-const activeDays = new Set(commits.map(item => (item.commit?.author?.date ?? "").slice(0, 10)).filter(Boolean)).size;
-const activeRepos = new Set(commits.map(item => item.repository?.full_name).filter(Boolean)).size;
-const merged = (pullPage.items ?? [])
-  .filter(item => item.pull_request?.merged_at)
+// A profile-README update is not engineering work; keep it out of the engineering signals.
+const codeCommits = commits.filter(item => item.repository?.full_name !== `${USER}/${USER}`);
+const activeDays = new Set(codeCommits.map(item => (item.commit?.author?.date ?? "").slice(0, 10)).filter(Boolean)).size;
+const activeRepos = new Set(codeCommits.map(item => item.repository?.full_name).filter(Boolean)).size;
+const morePullPages = Math.max(0, Math.min(9, Math.ceil(Math.min(pullPage.total_count ?? 0, 1000) / 100) - 1));
+const pullOthers = await Promise.all(Array.from({ length: morePullPages }, (_, i) =>
+  github("/search/issues", { q: pullQuery, per_page: 100, page: i + 2, sort: "updated", order: "desc" })
+));
+const merged = [pullPage, ...pullOthers].flatMap(page => page.items ?? [])
+  .filter(item => item.pull_request?.merged_at && item.repository_url !== `https://api.github.com/repos/${USER}/${USER}`)
   .sort((a, b) => b.pull_request.merged_at.localeCompare(a.pull_request.merged_at));
-const totalMerged = pullPage.total_count ?? merged.length;
+const totalMerged = merged.length;
 
 // Source-level test files, NOT passing test cases. Filesystem discovery is intentionally conservative.
 function isTestSource(path) {
+  if (path.split("/").some(part => part.startsWith(".") || ["node_modules", "vendor", "third_party", "docs"].includes(part))) return false;
   const ext = /\.(?:py|c|cc|cpp|cxx|go|rs|sh|js|jsx|ts|tsx)$/i;
   return ext.test(path) && (
     /(?:^|\/)(?:tests?|__tests__)\/[^/]+/i.test(path) ||
@@ -47,8 +54,8 @@ function isTestSource(path) {
   );
 }
 const pinned = [
-  { name: "fh1m/mongla_ws", label: "mongla_ws", workflows: ["ros.yml", "repository-integrity.yml"] },
-  { name: "fh1m/Dristy", label: "Dristy", workflows: [] },
+  { name: "fh1m/mongla_ws", label: "mongla_ws", featuredTest: "src/mongla_control/test/test_actuation_model.py", workflows: ["ros.yml", "repository-integrity.yml"] },
+  { name: "fh1m/Dristy", label: "Dristy", featuredTest: "dristy/dristy-py/tests/test_protocol_wire.py", workflows: [] },
 ];
 async function inspectRepo(project) {
   const root = `/repos/${project.name}`;
@@ -70,7 +77,7 @@ async function inspectRepo(project) {
     branch: repo.default_branch,
     pushed: repo.pushed_at?.slice(0, 10) ?? "unknown",
     tests: testFiles?.length ?? null,
-    firstTest: testFiles?.[0]?.path ?? null,
+    firstTest: testFiles?.find(item => item.path === project.featuredTest)?.path ?? testFiles?.[0]?.path ?? null,
     checks: checks.filter(Boolean),
   };
 }
@@ -141,7 +148,7 @@ const report = [
   "## The window",
   "",
   `- ${commitPage.total_count ?? commits.length} public commits (including profile maintenance)`,
-  `- ${activeRepos} repositories with authored commits`,
+  `- ${activeRepos} non-profile repositories with authored commits`,
   `- ${activeDays} ${activeDays === 1 ? "date" : "dates"} with authored commits`,
   `- ${totalMerged} merged pull ${totalMerged === 1 ? "request" : "requests"} authored by ${USER}`,
   "",
@@ -171,7 +178,7 @@ for (const r of repos) {
 report.push(
   "## Method",
   "",
-  "Commits: GitHub's public commit search for the author's date window. PRs: GitHub's merged PR search (self-merges count; this is not a claim of peer review). Test-source files: a conservative path/name filter over the default-branch Git tree; these are files, not passing test cases. CI: the latest completed default-branch push runs from named workflows; success is not a hardware validation claim.",
+  "Commits: GitHub's public commit search for the author's date window. PRs: GitHub's merged PR search (self-merges count; this is not a claim of peer review). Test-source files: a conservative path/name filter over the default-branch Git tree, including test harnesses; these are files, not passing test cases. CI: the latest completed default-branch push runs from named workflows; success is not a hardware validation claim.",
   ""
 );
 mkdirSync("dist", { recursive: true });
