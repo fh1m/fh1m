@@ -40,7 +40,7 @@ I learned in the wrong order: first the thing that leaves the ground, where a mi
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/fh1m/fh1m/output/evidence-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/fh1m/fh1m/output/evidence-light.svg">
-  <img src="https://raw.githubusercontent.com/fh1m/fh1m/output/evidence-dark.svg" alt="Public work: merged changes, active codebases, source tests and CI" width="100%">
+  <img src="https://raw.githubusercontent.com/fh1m/fh1m/output/evidence-dark.svg" alt="A public engineering record from 2023 onward: original repositories, test sources, automation, underwater autonomy, embedded perception, rover, experiments and systems work" width="100%">
 </picture>
 </a>
 
