@@ -1,0 +1,181 @@
+// A daily, inspectable account of changes and checks, not a score for competence.
+// All data is public. A passing CI run is not evidence of successful field trials.
+import { writeFileSync, mkdirSync } from "node:fs";
+
+const USER = "fh1m";
+const WINDOW_DAYS = 30;
+const today = new Date();
+const since = new Date(today.getTime() - WINDOW_DAYS * 86400000).toISOString().slice(0, 10);
+const headers = {
+  Accept: "application/vnd.github+json",
+  "User-Agent": "fh1m-profile-evidence",
+  ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}),
+};
+
+async function github(path, params = {}) {
+  const url = new URL(`https://api.github.com${path}`);
+  for (const [key, value] of Object.entries(params)) url.searchParams.set(key, String(value));
+  const response = await fetch(url, { headers });
+  if (!response.ok) throw new Error(`GitHub ${response.status}: ${url.pathname} / ${await response.text()}`);
+  return response.json();
+}
+
+const commitQuery = `author:${USER} author-date:>=${since}`;
+const pullQuery = `is:pr is:merged author:${USER} merged:>=${since}`;
+const [commitPage, pullPage] = await Promise.all([
+  github("/search/commits", { q: commitQuery, per_page: 100, page: 1, sort: "author-date", order: "desc" }),
+  github("/search/issues", { q: pullQuery, per_page: 100, page: 1, sort: "updated", order: "desc" }),
+]);
+const extraPages = Math.min(9, Math.ceil(Math.min(commitPage.total_count ?? 0, 1000) / 100) - 1);
+const others = await Promise.all(Array.from({ length: Math.max(0, extraPages) }, (_, i) =>
+  github("/search/commits", { q: commitQuery, per_page: 100, page: i + 2, sort: "author-date", order: "desc" })
+));
+const commits = [commitPage, ...others].flatMap(page => page.items ?? []);
+const activeDays = new Set(commits.map(item => (item.commit?.author?.date ?? "").slice(0, 10)).filter(Boolean)).size;
+const activeRepos = new Set(commits.map(item => item.repository?.full_name).filter(Boolean)).size;
+const merged = (pullPage.items ?? [])
+  .filter(item => item.pull_request?.merged_at)
+  .sort((a, b) => b.pull_request.merged_at.localeCompare(a.pull_request.merged_at));
+const totalMerged = pullPage.total_count ?? merged.length;
+
+// Source-level test files, NOT passing test cases. Filesystem discovery is intentionally conservative.
+function isTestSource(path) {
+  const ext = /\.(?:py|c|cc|cpp|cxx|go|rs|sh|js|jsx|ts|tsx)$/i;
+  return ext.test(path) && (
+    /(?:^|\/)(?:tests?|__tests__)\/[^/]+/i.test(path) ||
+    /(?:^|\/)(?:test_[^/]+|[^/]+_test|[^/]+\.(?:test|spec))\.(?:py|c|cc|cpp|cxx|go|rs|sh|js|jsx|ts|tsx)$/i.test(path)
+  );
+}
+const pinned = [
+  { name: "fh1m/mongla_ws", label: "mongla_ws", workflows: ["ros.yml", "repository-integrity.yml"] },
+  { name: "fh1m/Dristy", label: "Dristy", workflows: [] },
+];
+async function inspectRepo(project) {
+  const root = `/repos/${project.name}`;
+  const repo = await github(root);
+  const tree = await github(`${root}/git/trees/${encodeURIComponent(repo.default_branch)}`, { recursive: 1 });
+  const testFiles = tree.truncated ? null : (tree.tree ?? []).filter(item => item.type === "blob" && isTestSource(item.path));
+  const checks = await Promise.all(project.workflows.map(async (workflow) => {
+    try {
+      const report = await github(`${root}/actions/workflows/${workflow}/runs`, { branch: repo.default_branch, event: "push", per_page: 8 });
+      const run = (report.workflow_runs ?? []).find(r => r.event === "push" && r.status === "completed");
+      return run ? { workflow, status: run.conclusion ?? "unknown", date: run.updated_at?.slice(0, 10) ?? "unknown", url: run.html_url ?? null } : null;
+    } catch (error) {
+      console.warn(`Could not read ${project.name} / ${workflow}: ${error.message}`);
+      return null;
+    }
+  }));
+  return {
+    ...project,
+    branch: repo.default_branch,
+    pushed: repo.pushed_at?.slice(0, 10) ?? "unknown",
+    tests: testFiles?.length ?? null,
+    firstTest: testFiles?.[0]?.path ?? null,
+    checks: checks.filter(Boolean),
+  };
+}
+const repos = await Promise.all(pinned.map(inspectRepo));
+
+const escapeXml = (s) => String(s ?? "")
+  .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+  .replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+const clip = (s, max) => String(s ?? "").length > max ? String(s).slice(0, max - 1) + "…" : String(s ?? "");
+const colors = {
+  dark: { bg: "#0d1117", border: "#30363d", rule: "#21262d", fg: "#e6edf3", quiet: "#8b949e", blue: "#79c0ff", amber: "#e3b341", good: "#7ee787", bad: "#ff7b72" },
+  light: { bg: "#ffffff", border: "#d0d7de", rule: "#d8dee4", fg: "#1f2328", quiet: "#656d76", blue: "#0969da", amber: "#9a6700", good: "#1a7f37", bad: "#cf222e" },
+};
+function build(theme) {
+  const c = colors[theme], W = 860, H = 548;
+  const label = (x, y, value, color = c.quiet, size = 12, weight = 400) =>
+    `<text x="${x}" y="${y}" fill="${color}" font-size="${size}" font-weight="${weight}">${escapeXml(value)}</text>`;
+  const section = y => `<line x1="24" y1="${y}" x2="836" y2="${y}" stroke="${c.rule}" />`;
+  let result = [
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Recent merged pull requests, test source files and CI results from GitHub" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">`,
+    `<rect x="0.5" y="0.5" width="859" height="547" rx="8" fill="${c.bg}" stroke="${c.border}"/>`,
+    label(24, 33, "$ evidence --from-the-source", c.blue, 14),
+    label(24, 56, "A diff can be read. A test can be rerun. Neither replaces a field trial."),
+    label(24, 89, "MERGED PRS / 30D", c.quiet, 11),
+    label(24, 121, totalMerged.toLocaleString("en-US"), c.fg, 28),
+    label(304, 89, "CODEBASES TOUCHED / 30D", c.quiet, 11),
+    label(304, 121, activeRepos.toLocaleString("en-US"), c.fg, 28),
+    label(620, 89, "DAYS WITH COMMITS / 30D", c.quiet, 11),
+    label(620, 121, activeDays.toLocaleString("en-US"), c.fg, 28),
+    section(140),
+    label(24, 166, "recently merged / follow the change", c.amber, 12),
+  ];
+  const recent = merged.slice(0, 3);
+  for (let i = 0; i < 3; i++) {
+    const item = recent[i], y = 197 + i * 57;
+    if (!item) { if (i === 0) result.push(label(24, y, "No merged public pull requests in this window.")); break; }
+    const repo = item.repository_url?.split("/").slice(-1)[0] ?? item.html_url?.split("/")[4] ?? "repository";
+    const date = item.pull_request.merged_at.slice(0, 10);
+    result.push(label(24, y, `${repo}  /  ${date}  /  PR #${item.number}`, c.quiet, 11));
+    result.push(label(24, y + 20, clip(item.title, 98), c.fg, 13));
+  }
+  result.push(section(356), label(24, 383, "test surfaces / source files and automated checks", c.amber, 12));
+  for (let i = 0; i < repos.length; i++) {
+    const r = repos[i], y = 415 + i * 47;
+    result.push(label(24, y, r.label, c.blue, 13, 600));
+    result.push(label(185, y, r.tests === null ? "test files: unavailable (tree truncated)" : `${r.tests} test-source files on ${r.branch}`, c.fg, 12));
+    const checkText = r.checks.length
+      ? r.checks.map(x => `${x.workflow === "ros.yml" ? "ROS / Humble + Jazzy" : "integrity"}: ${x.status} (${x.date})`).join(" · ")
+      : "no published CI result in this panel";
+    result.push(label(185, y + 20, clip(checkText, 84), r.checks.some(x => x.status === "failure") ? c.bad : c.quiet, 11));
+  }
+  result.push(
+    section(520),
+    label(24, 539, `Public GitHub data · updated ${today.toISOString().slice(0, 10)} UTC · see links below for the underlying code and runs`, c.quiet, 10),
+    "</svg>"
+  );
+  return result.join("\n");
+}
+// The long-form index lives on the generated output branch; main never needs daily bot commits.
+const mdSafe = (s) => String(s ?? "").replace(/([\\[\]])/g, "\\$1");
+const report = [
+  "# The public trail",
+  "",
+  "Code, test sources and check runs. All links lead back to GitHub. These are records of work, not evidence of performance in the water.",
+  "",
+  `Updated ${today.toISOString().slice(0, 10)} (UTC) · rolling ${WINDOW_DAYS}-day window`,
+  "",
+  "## The window",
+  "",
+  `- ${commitPage.total_count ?? commits.length} public commits (including profile maintenance)`,
+  `- ${activeRepos} repositories with authored commits`,
+  `- ${activeDays} ${activeDays === 1 ? "date" : "dates"} with authored commits`,
+  `- ${totalMerged} merged pull ${totalMerged === 1 ? "request" : "requests"} authored by ${USER}`,
+  "",
+  "## Recently merged",
+  "",
+];
+if (!merged.length) report.push("No merged public pull requests were found in the window.");
+for (const item of merged.slice(0, 8)) {
+  const date = item.pull_request.merged_at.slice(0, 10);
+  const hasMethod = /^##\s+(?:Verified|Testing|Tests|Validation|How (?:I )?tested|Test plan)\b/im.test(item.body ?? "");
+  report.push(`- [${mdSafe(item.title)}](${item.html_url}) — ${date}${hasMethod ? " · method/verification notes in PR body" : ""}`);
+}
+report.push("", "## Test sources and checks", "");
+for (const r of repos) {
+  const root = `https://github.com/${r.name}`;
+  const source = r.firstTest ? `${root}/blob/${r.branch}/${r.firstTest.split("/").map(encodeURIComponent).join("/")}` : `${root}/tree/${r.branch}`;
+  report.push(`### [${r.label}](${root})`, "");
+  report.push(`- ${r.tests === null ? "Source tree truncated: file count unavailable" : `${r.tests} test-source ${r.tests === 1 ? "file" : "files"} detected on ${r.branch}`} — [inspect an example](${source})`);
+  report.push(`- Latest repository push: ${r.pushed}`);
+  if (r.checks.length) {
+    for (const run of r.checks) report.push(`- ${run.workflow}: **${run.status}** (${run.date})${run.url ? ` — [run log](${run.url})` : ""}`);
+  } else {
+    report.push("- No CI result displayed for this repository; this is not a test result.");
+  }
+  report.push("");
+}
+report.push(
+  "## Method",
+  "",
+  "Commits: GitHub's public commit search for the author's date window. PRs: GitHub's merged PR search (self-merges count; this is not a claim of peer review). Test-source files: a conservative path/name filter over the default-branch Git tree; these are files, not passing test cases. CI: the latest completed default-branch push runs from named workflows; success is not a hardware validation claim.",
+  ""
+);
+mkdirSync("dist", { recursive: true });
+writeFileSync("dist/evidence.md", report.join("\n"));
+mkdirSync("dist", { recursive: true });
+for (const theme of ["dark", "light"]) writeFileSync(`dist/evidence-${theme}.svg`, build(theme));
+console.log(`Evidence: ${totalMerged} merged PRs, ${activeRepos} repos, ${activeDays} active days; test files: ${repos.map(r => r.tests).join(", ")}`);
