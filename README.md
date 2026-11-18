@@ -44,7 +44,7 @@ I learned in the wrong order: first the thing that leaves the ground, where a mi
 </picture>
 </a>
 
-<br/>
+<p align="center">&nbsp;</p>
 
 | | |
 |---|---|
