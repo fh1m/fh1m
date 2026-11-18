@@ -33,7 +33,7 @@ jobs:
         run: |
           node scripts/ledger.mjs
           node scripts/evidence.mjs
-          sudo cp dist/ledger-*.svg dist/evidence-*.svg ../dist/  # the snake action writes dist at root
+          sudo cp dist/ledger-*.svg dist/evidence-*.svg dist/evidence.md ../dist/  # the snake action writes dist at root
 
       - uses: crazy-max/ghaction-github-pages@df5cc2bfa78282ded844b354faee141f06b41865 # v4
         with:
