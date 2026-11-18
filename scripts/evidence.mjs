@@ -214,7 +214,7 @@ for(const item of inventory){
   accountReport.push(`| [${r.name}](${r.html_url})${archived} | ${(r.created_at??"—").slice(0,10)} | ${(r.pushed_at??"—").slice(0,10)} | ${(r.language??"—").replace(/\|/g,"/")} | ${item.tests??"unknown"} | ${item.workflows??"unknown"} |`);
 }
 accountReport.push("");
-report.splice(report.indexOf("## The window"),0,...accountReport);
+report.splice(report.indexOf("## Recent activity (30 days)"),0,...accountReport);
 
 report.push("", "## Test sources and checks", "");
 for (const r of repos) {
