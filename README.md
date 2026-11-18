@@ -36,15 +36,13 @@ I learned in the wrong order: first the thing that leaves the ground, where a mi
 
 <br/>
 
+<a href="https://github.com/fh1m/fh1m/blob/output/evidence.md" title="Inspect the source evidence">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/fh1m/fh1m/output/evidence-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/fh1m/fh1m/output/evidence-light.svg">
-  <img src="https://raw.githubusercontent.com/fh1m/fh1m/output/evidence-dark.svg" alt="Daily GitHub evidence: merged engineering changes, active codebases, test source files and CI check results" width="100%">
+  <img src="https://raw.githubusercontent.com/fh1m/fh1m/output/evidence-dark.svg" alt="Public work: merged changes, active codebases, source tests and CI" width="100%">
 </picture>
-
-<sub>
-The number of commits tells you I was there. The [merged changes and their diffs](https://github.com/fh1m/fh1m/blob/output/evidence.md), [test sources](https://github.com/fh1m/mongla_ws/tree/main/src/mongla_control/test), and [build logs](https://github.com/fh1m/mongla_ws/actions) tell you what survived inspection.
-</sub>
+</a>
 
 <br/>
 
