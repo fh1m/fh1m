@@ -31,16 +31,16 @@ function svg(theme) {
   const c = theme === "dark"
     ? { bg: "#0d1117", line: "#21262d", fg: "#e6edf3", dim: "#7d8590", acc: "#58a6ff", hash: "#d29922" }
     : { bg: "#ffffff", line: "#d0d7de", fg: "#1f2328", dim: "#656d76", acc: "#0969da", hash: "#9a6700" };
-  const ROW = 46, H = 64 + rows.length * ROW + 30;
+  const ROW = 50, H = 76 + rows.length * ROW + 44;
   const lines = rows.map((r, i) => {
-    const y = 66 + i * ROW;
+    const y = 78 + i * ROW;
     return `<text x="24" y="${y}" fill="${c.hash}" font-size="12">${esc(r.repo)}<tspan dx="12" fill="${c.dim}">${r.date}</tspan></text><text x="24" y="${y + 19}" fill="${c.fg}">${esc(clip(r.subject, 92))}</text>`;
   }).join("");
   return `<svg xmlns="http://www.w3.org/2000/svg" width="860" height="${H}" viewBox="0 0 860 ${H}" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13">
 <rect width="860" height="${H}" rx="8" fill="${c.bg}" stroke="${c.line}"/>
 <text x="24" y="34" fill="${c.acc}" font-size="14">$ git log --author=fh1m   # docs and README commits left out</text>
 ${lines}
-<text x="24" y="${H - 16}" fill="${c.dim}">${days30} public commits in the last 30 days. Rebuilt every day from the GitHub API.</text>
+<text x="24" y="${H - 28}" fill="${c.dim}">${days30} public commits in the last 30 days. Rebuilt every day from the GitHub API.</text>
 </svg>`;
 }
 mkdirSync("dist", { recursive: true });
