@@ -51,7 +51,7 @@ I learned in the wrong order: first the thing that leaves the ground, where a mi
   <tbody>
     <tr>
       <td><strong>BRACU Duburi</strong></td>
-      <td>Engineering Team Lead for RoboSub 2026; vision before that. 8th of 58 at RoboSub in 2025 and 2026. Co-author of both Technical Design Reports.</td>
+      <td>Former Engineering Team Lead for RoboSub 2026; previously led the vision sub-team. I left BRAC University and Duburi in August 2026. The team placed 8th of 58 in 2025 and 2026; I co-authored both Technical Design Reports.</td>
     </tr>
     <tr>
       <td><strong><a href="https://github.com/fh1m/mongla_ws">Mongla</a></strong></td>
